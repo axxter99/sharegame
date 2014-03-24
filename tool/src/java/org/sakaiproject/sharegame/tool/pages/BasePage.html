@@ -7,28 +7,60 @@
 <body>
 	<div class="portletBody">
 		<ul class="navIntraTool actionToolbar" role="menu">
-			<li class="firstToolBarItem" role="menuitem">
-				<span>
-					<a wicket:id="firstLink">
-						<span wicket:id="firstLinkLabel">[firstLinkLabel]</span>
-					</a>
-				</span>
-			</li>
-			<li role="menuitem">
-				<span>
-					<a wicket:id="secondLink">
-						<span wicket:id="secondLinkLabel">[secondLinkLabel]</span>
-					</a>
-				</span>
-			</li>
-			<li role="menuitem">
-				<span>
-					<a wicket:id="thirdLink">
-						<span wicket:id="thirdLinkLabel">[thirdLinkLabel]</span>
-					</a>
-				</span>
-			</li>
-		</ul>
+		
+		
+		<h2 align="left">Industry Research Project: Share Trading</h2>
+
+<p align="left"><font size="2">You have been given R100 000 to buy shares in companies. 
+Use this money to buy the shares you think will increase in value in
+the next weeks. Once you have bought shares, the transaction is placed in a database and
+marked as 'pending'. The shares are 'bought' at that day's closing price and your 'bank
+balance' is debited. If you have insufficient money to buy all the shares you requested,
+you will receive the shares you were able to afford. You cannot undo any transactions, so
+check what you fill in on the forms. Once you have bought shares and the transaction has
+been processed you can sell them. The money is then credited to your bank balance.
+Consult the links to useful information or click the 'Start Trading' button below 
+to view your portfolio or buy or sell shares.</font></p>
+
+
+<table border="0" width="100%" height="85">
+<tr>
+	<td><div align="left"><p align="center">
+	<input type="submit" value="Trade Shares" name="B3"></p>
+      </div><div align="left">
+      <ul>
+        <li>
+          <font size="3"><a href="companyinfo.php">Company 
+      Data</a> - share price and company information&nbsp;</font>
+        </li>
+        <li>
+          <font size="3"> <a href="http://wol.sharenet.co.za/free/library/" target="_blank">ShareNet
+      Web site</a> - more useful onformation on the shares</font>
+        </li>
+        <li>
+          <font size="3"><a href="graphs.php">Graphs
+          and results</a>  - company share price</font>
+        </li>
+        <li>
+          <font size="3"><a href="movers.php">Last week</a> - share prices of
+          the week&nbsp;</font>
+        </li>
+        <li>
+          <font size="3"><a href=trades.php>Trading history</a> - your
+          trading history</font>
+        </li>
+        <li>
+          <font size="3"><a href="wealth.php">Wealth (Shares + Cash)</a>
+          - wealth of everyone in the class&nbsp;</font>
+        </li>
+        <li>
+          <font size="3"><a href="trading.htm">Trading Rules</a> - rules and
+          information on trading</font>
+        </li>
+      </ul>
+      
+         </tr>
+  </table>
 		
 		<span wicket:id="feedback">feedbackmessages will be put here</span>
 		

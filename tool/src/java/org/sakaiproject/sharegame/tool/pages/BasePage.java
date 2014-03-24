@@ -59,35 +59,7 @@ public class BasePage extends WebPage implements IHeaderContributor {
 				setResponsePage(new FirstPage());
 			}
 		};
-		firstLink.add(new Label("firstLinkLabel",new ResourceModel("link.first")).setRenderBodyOnly(true));
-		firstLink.add(new AttributeModifier("title", true, new ResourceModel("link.first.tooltip")));
-		add(firstLink);
 		
-		
-		
-		//second link
-		secondLink = new Link<Void>("secondLink") {
-			private static final long serialVersionUID = 1L;
-			public void onClick() {
-				setResponsePage(new SecondPage());
-			}
-		};
-		secondLink.add(new Label("secondLinkLabel",new ResourceModel("link.second")).setRenderBodyOnly(true));
-		secondLink.add(new AttributeModifier("title", true, new ResourceModel("link.second.tooltip")));
-		add(secondLink);
-		
-		
-		
-		//third link
-		thirdLink = new Link<Void>("thirdLink") {
-			private static final long serialVersionUID = 1L;
-			public void onClick() {
-				setResponsePage(new ThirdPage());
-			}
-		};
-		thirdLink.add(new Label("thirdLinkLabel",new StringResourceModel("link.third", null, new String[] {"3"})).setRenderBodyOnly(true));
-		thirdLink.add(new AttributeModifier("title", true, new ResourceModel("link.third.tooltip")));
-		add(thirdLink);
 		
 		
 		// Add a FeedbackPanel for displaying our messages
