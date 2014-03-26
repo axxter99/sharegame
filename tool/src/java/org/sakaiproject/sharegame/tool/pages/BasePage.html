@@ -26,7 +26,11 @@ to view your portfolio or buy or sell shares.</font></p>
 <table border="0" width="100%" height="85">
 <tr>
 	<td><div align="left"><p align="center">
-	<input type="submit" value="Trade Shares" name="B3"></p>
+	<form method="POST" action="commerce.php">
+	  <input name=\"LastMID\" type=\"hidden\" value=\"".$_SESSION["Studentid"]. "\">"
+	  <input type="submit" value="Trade Shares" name="B3">
+	 </form>
+	  </p>
       </div><div align="left">
       <ul>
         <li>
