@@ -1,0 +1,119 @@
+<%
+'Sharetrade - Simple Sharetrading Simulation V 1.0.2
+'Copyright (C) 2001/2  David Horwitz & Andrew Deacon
+
+'This program is free software; you can redistribute it and/or
+'modify it under the terms of the GNU General Public License
+'as published by the Free Software Foundation; either version 2
+'of the License, or (at your option) any later version.
+
+'This program is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of
+'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'GNU General Public License for more details.
+
+'You should have received a copy of the GNU General Public License
+'along with this program; if not, write to the Free Software
+'Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,  'USA.
+
+'David Horwitz
+'Multimedia Education Group
+'Private Bag
+'Rondebosch
+'7001
+'South Africa
+'Email: dhorwitz@its.uct.ac.za
+%>
+
+<HTML>
+<HEAD>
+<TITLE>Price History - Choose Share</TITLE>
+</HEAD>
+
+<BODY>
+
+<%
+response.buffer=true
+if isnull(session.contents("mid")) or len(session.contents("mid"))=0 then
+	response.redirect "login.asp"
+end if
+%>
+
+<center>
+<a href="javascript:history.go(-1)">Back</a>
+<hr>
+<H2>Trading History</h2>
+</center>
+
+<p align=left>
+Select a share and the start and end date to see the share price changes.
+</p>	
+
+<%
+set cnn1 = server.CreateObject("ADODB.connection")
+set arecordset = server.CreateObject("ADODB.recordset")
+cnn1.Open "sharetrade_psql"
+%>
+
+<table border=1>
+<tr>
+<td>
+<select size=1 name=CID>
+<option value=0>---Select share to get price history---</option>
+<%
+		'find shares to display
+		if session.contents("grp_id1")=1 then
+			share_sql=""
+		end if
+		
+		if session.contents("grp_id1")<>1 then
+			grp_count=session.contents("grp_count")
+			z=1		
+			'get the first group
+			share_sql= " and ("
+			for z=1 to grp_count
+				if z=1 then
+					share_sql1="group_id="&cstr(session.contents("grp_id"&z))
+				elseif z > 1 then
+					share_sql1=" or group_id="&cstr(session.contents("grp_id"&z))
+				end if
+				share_sql=share_sql&share_sql1
+			next
+			share_sql=share_sql&")"
+		end if
+		
+		arecordset.open ("select * from companies,groups_share_link where companies.cid=groups_share_link.cid and used=TRUE"&share_sql&" order by companyname")
+		last_cid=""
+  		while not arecordset.eof
+	  		if arecordset("cid")<>last_cid then
+				response.write "<option value=""" & arecordset("cid") & """>" & arecordset("companyname") & "</option>"
+			end if
+			last_cid=arecordset("cid")
+			arecordset.movenext		
+		wend
+		arecordset.close
+	end if
+%>
+</td>
+<td>
+<% response.display("select * from companies,groups_share_link where companies.cid=groups_share_link.cid and used=TRUE"&share_sql&" order by companyname") %>
+</td>
+</tr>
+</table>
+<% response.display("--dgdfgdg dfg dfg dfgdfg dfg") %>
+<% response.display("select * from companies,groups_share_link where companies.cid=groups_share_link.cid and used=TRUE"&share_sql&" order by companyname") %>
+
+<%
+cnn1.Close
+%>
+
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
