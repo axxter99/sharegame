@@ -13,7 +13,7 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 	
 	private static Log log = LogFactory.getLog(ShareGame.class);
 	
-	public static final String VIEW_ID = "ShareGame";
+	public static final String VIEW_ID = "share";
 	public String getViewID() {
 		return VIEW_ID;
 	}

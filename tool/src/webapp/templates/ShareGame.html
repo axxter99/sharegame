@@ -1,6 +1,3 @@
-<?
-require ('../../init.inc');
-?>
 <html>
 
 <head>
@@ -8,7 +5,7 @@ require ('../../init.inc');
 </head>
 
 <body>
-<?
+<!-- ?
 #check the users sharegame settings
 sharedbopen();
 $usrrec=pg_query($shareconn,"Select * from portfoliomanagers where mid='".$_SESSION['studentid']."'");
@@ -24,7 +21,7 @@ if (pg_numrows($usrrec)==0) {
 
 pg_close($shareconn);
 
-?>
+? -->
 
 
 <h1 align="center">Welcome to the Industry Research Project Share Game</h1>
@@ -33,11 +30,9 @@ pg_close($shareconn);
 Click the Continue button below to start. When you have finished or need to return to
 Excel, click the Close button [X] in the top right corner of this small window.</p>
 
-<form method="POST" action="share.php"
-name="Intro">
-  <input type="hidden" name="LastMID" value><div align="center"><center><p><input
-  type="submit" value="Continue" name="B1"></p>
-  </center></div>
+<form method="POST" action="share.php" name="Intro">
+  <input type="hidden" name="LastMID">
+  <div align="center"><center><input type="submit" value="Continue" name="B1"></center></div>
 </form>
 </body>
 </html>
