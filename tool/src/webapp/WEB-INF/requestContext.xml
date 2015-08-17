@@ -7,7 +7,7 @@
 	</bean>
 	
 		
-	<!-- ><bean  id="trade" class="org.sakaiproject.sharegame.tool.producers.Trade">
-	</bean> -->
+	<bean  id="trade" class="org.sakaiproject.sharegame.tool.producers.Trade">
+	</bean> 
  
 </beans>

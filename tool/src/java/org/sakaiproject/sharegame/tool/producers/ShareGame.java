@@ -4,6 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import uk.org.ponder.rsf.components.UIContainer;
+import uk.org.ponder.rsf.components.UILink;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.DefaultView;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
@@ -20,5 +21,7 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 	
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("ShareGame!");
+		
+		UILink.make(tofill, "trade-shares", Trade.VIEW_ID);
 	}
 }
