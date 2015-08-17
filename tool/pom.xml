@@ -35,6 +35,12 @@
 		</dependency>
 		
 		<!-- Sakai dependencies -->
+		<!-- RSF dependencies -->
+		<dependency>
+			<groupId>uk.org.ponder.sakairsf</groupId>
+			<artifactId>sakairsf</artifactId>
+			<version>${sakairsf.version}</version>
+		</dependency>
        	<dependency>
            	<groupId>org.sakaiproject.kernel</groupId>
 			<artifactId>sakai-kernel-api</artifactId>
