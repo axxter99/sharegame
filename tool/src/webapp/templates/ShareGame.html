@@ -9,7 +9,7 @@ require ('../../init.inc');
 
 <body>
 <?
-#check the users sahregame settings
+#check the users sharegame settings
 sharedbopen();
 $usrrec=pg_query($shareconn,"Select * from portfoliomanagers where mid='".$_SESSION['studentid']."'");
 #echo "Select * from portfoliomanagers where mid='".$_SESSION['studentid']."'";
