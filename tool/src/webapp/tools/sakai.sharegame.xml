@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registration>
 	<tool id="sakai.sharegame" 
-		title="My Sakai App" 
+		title="Share Game" 
 		description="This description is set in the tool registration file, found in the webapp/tools directory">
 
 		<!--  This tool will be made available to the following site types via Site Info > Edit Tools -->

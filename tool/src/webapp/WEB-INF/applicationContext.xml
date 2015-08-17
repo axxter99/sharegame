@@ -19,4 +19,12 @@
 		</property>
 		<property name="localeGetter" ref="requestLocaleProxy" />
 	</bean>
+
+	<!-- Control the location of the html templates (default: content/templates/) -->
+	<bean id="templateResolverStrategy" parent="CRITemplateResolverStrategy">
+		<property name="baseDirectory" value="templates/" />
+	</bean>
+	
+	<bean id="shareGame" class="org.sakaiproject.sharegame.tool.producers.ShareGame">
+	</bean>
 </beans>
