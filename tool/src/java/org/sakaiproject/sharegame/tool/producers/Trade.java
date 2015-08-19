@@ -12,13 +12,18 @@ import uk.org.ponder.rsf.viewstate.ViewParameters;
 public class Trade implements ViewComponentProducer {
 
 	private static Log log = LogFactory.getLog(trade.class);
-	
+
 	public static final String VIEW_ID = "trade";
+
+	@Override
 	public String getViewID() {
 		return VIEW_ID;
 	}
-	
+
+	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("ShareGame!: trade!");
 	}
+
+
 }

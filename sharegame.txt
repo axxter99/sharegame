@@ -1,0 +1,11 @@
+user: student
+
+
+$usrrec=pg_query($shareconn,"Select * from portfoliomanagers where mid='".$_SESSION['studentid']."'");
+#echo "Select * from portfoliomanagers where mid='".$_SESSION['studentid']."'";
+if (pg_numrows($usrrec)==0) {
+ # echo "no user";
+  $cuser=pg_query($shareconn,"insert into portfoliomanagers values ('".$_SESSION['studentid']."','".$_SESSION['firstname']." ".$_SESSION['surname']."','old',false,NULL,NULL,NULL,'".$_SESSION['email']."')");
+
+#create a bankacount
+  $bnkrec=pg_query($shareconn,"insert into bankaccounts values ('".$_SESSION['studentid']."',100000)");
