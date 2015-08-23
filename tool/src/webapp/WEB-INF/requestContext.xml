@@ -11,5 +11,8 @@
 
 	<bean id="trade" class="org.sakaiproject.sharegame.tool.producers.TradeTool">
 	</bean>
+	
+	<bean id="commerce" class="org.sakaiproject.sharegame.tool.producers.Commerce">
+	</bean>
 
 </beans>

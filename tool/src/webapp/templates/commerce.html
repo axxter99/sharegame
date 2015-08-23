@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<title>Trade Shares</title>
+<link rsf:id="scr=portal-matter" href="/library/skin/tool_base.css"
+	type="text/css" rel="stylesheet" media="all" />
+<link rsf:id="scr=portal-matter" href="/library/skin/default/tool.css"
+	type="text/css" rel="stylesheet" media="all" />
+<script rsf:id="scr=portal-matter" type="text/javascript"
+	language="JavaScript" src="/library/js/headscripts.js"></script>
+</head>
+
+<body id="body">
+	<div class="portletBody">
+
+		<table width="750" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<!-- <td width="130" valign="top" background="<?=$SBIGURI?>/images/<?=$buttoncolour?>/navback.gif"><? require ("../include/navigation.php") ?></td>-->
+				<td width="620" valign="top">
+					<!-- ? if ($graphicheader) { ?><img src="<?=$SBIGURI?>/images/<?=$buttoncolour?>/graphicheader.gif"><br><? } ?-->
+					<form method="POST" name="Trade" action="transact.php">
+						<center>
+							<strong> <a href="javascript:history.go(-1)">back</a>
+							</strong> <br> <br>
+
+							<table width="80%">
+								<tr>
+									<b>Manager's name: <span>firstname surname</span></b>
+									<hr>
+								</tr>
+								<tr>
+									<input type="radio" value="buy" name="TransactionType">Buy
+								</tr>
+								<tr>
+									<input type="radio" name="TransactionType" value="sell">Sell
+								</tr>
+								<tr>
+									<input type="radio" name="TransactionType" value="enquire"
+										checked>Enquire
+								</tr>
+								<tr>
+									<br>
+									<input type="submit" value="Ok" name="B1">
+									<hr>
+								</tr>
+							</table>
+						</center>
+					</form>
+
+					<p align="center">
+						<a href="../game/share.php">Exit Share Trading (see historical
+							share price data)</a>
+					</p>
+
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
