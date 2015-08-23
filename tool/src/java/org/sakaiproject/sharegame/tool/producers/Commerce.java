@@ -12,7 +12,7 @@ public class Commerce implements ViewComponentProducer {
 
 	private static Log log = LogFactory.getLog(Commerce.class);
 	
-	public static final String VIEW_ID = "Commerce";
+	public static final String VIEW_ID = "commerce";
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		// TODO Auto-generated method stub

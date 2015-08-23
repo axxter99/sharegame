@@ -9,3 +9,5 @@ if (pg_numrows($usrrec)==0) {
 
 #create a bankacount
   $bnkrec=pg_query($shareconn,"insert into bankaccounts values ('".$_SESSION['studentid']."',100000)");
+
+  Bank Accounts
