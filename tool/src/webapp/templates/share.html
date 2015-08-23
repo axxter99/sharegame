@@ -1,77 +1,77 @@
 <html>
 <head>
 <title>Share Game</title>
-<link rsf:id="scr=portal-matter" href="/library/skin/tool_base.css"
-	type="text/css" rel="stylesheet" media="all" />
-<link href="/library/skin/default/tool.css" type="text/css"
-	rel="stylesheet" media="all" rsf:id="scr=portal-matter" />
+<link rsf:id="scr=portal-matter" href="/library/skin/tool_base.css" type="text/css" rel="stylesheet" media="all" />
+<link  rsf:id="scr=portal-matter" href="/library/skin/default/tool.css" type="text/css" rel="stylesheet" media="all" />
+<script rsf:id="scr=portal-matter" type="text/javascript" language="JavaScript" src="/library/js/headscripts.js"></script>
 </head>
 
-<body>
+<body id="body">
+	<div class="portletBody">
+		<h2 align="left">Industry Research Project: Share Trading</h2>
 
-	<h2 align="left">Industry Research Project: Share Trading</h2>
+		<p align="left">You have been given R100 000 to buy shares in
+			companies. Use this money to buy the shares you think will increase
+			in value in the next weeks. Once you have bought shares, the
+			transaction is placed in a database and marked as 'pending'. The
+			shares are 'bought' at that day's closing price and your 'bank
+			balance' is debited. If you have insufficient money to buy all the
+			shares you requested, you will receive the shares you were able to
+			afford. You cannot undo any transactions, so check what you fill in
+			on the forms. Once you have bought shares and the transaction has
+			been processed you can sell them. The money is then credited to your
+			bank balance. Consult the links to useful information or click the
+			'Start Trading' button below to view your portfolio or buy or sell
+			shares.</p>
 
-	<p align="left">You have been given R100 000 to buy shares in
-		companies. Use this money to buy the shares you think will increase in
-		value in the next weeks. Once you have bought shares, the transaction
-		is placed in a database and marked as 'pending'. The shares are
-		'bought' at that day's closing price and your 'bank balance' is
-		debited. If you have insufficient money to buy all the shares you
-		requested, you will receive the shares you were able to afford. You
-		cannot undo any transactions, so check what you fill in on the forms.
-		Once you have bought shares and the transaction has been processed you
-		can sell them. The money is then credited to your bank balance.
-		Consult the links to useful information or click the 'Start Trading'
-		button below to view your portfolio or buy or sell shares.</p>
 
-
-	<div align="left">
 		<div align="left">
-			<p align="center">
-				<a href="trade.html" rsf:id="trade-shares">Trade Shares</a>
-			</p>
+			<div align="left">
+				<p align="center">
+					<a href="trade.html" rsf:id="trade-shares">Trade Shares</a>
+				</p>
+			</div>
+			<div align="left">
+				<ul>
+					<li><a href="companyinfo.html">Company Data</a> - share price
+						and company information&nbsp;</li>
+					<li><a href="http://wol.sharenet.co.za/free/library/"
+						target="_blank">ShareNet Web site</a> - more useful onformation on
+						the shares</li>
+					<li><a href="graphs.html">Graphs and results</a> - company
+						share price</li>
+					<li><a href="movers.html">Last week</a> - share prices of the
+						week&nbsp;</li>
+					<li><a href="trades.html">Trading history</a> - your trading
+						history</li>
+					<li><a href="wealth.html">Wealth (Shares + Cash)</a> - wealth
+						of everyone in the class&nbsp;</li>
+					<li><a href="trading.htm">Trading Rules</a> - rules and
+						information on trading</li>
+				</ul>
+
+				<!--  Go to the <a href="admin/">administration tools</a> -->
+
+			</div>
+
+
+			<div align="center">
+				<hr />
+			</div>
+
+
+
+			<div align="center">
+				<center>
+
+					<BR /> Our records indicate the you last loged in on
+					<span rsf:id="shareUser">qwerty1234</span> <!--=$_SESSION["lastlogin"]? -->
+					<br /> If you did not please check your portfolio and speak to the
+					course lecturer
+				</center>
+			</div>
 		</div>
-		<div align="left">
-			<ul>
-				<li><a href="companyinfo.html">Company Data</a> - share price
-					and company information&nbsp;</li>
-				<li><a href="http://wol.sharenet.co.za/free/library/"
-					target="_blank">ShareNet Web site</a> - more useful onformation on
-					the shares</li>
-				<li><a href="graphs.html">Graphs and results</a> - company
-					share price</li>
-				<li><a href="movers.html">Last week</a> - share prices of the
-					week&nbsp;</li>
-				<li><a href="trades.html">Trading history</a> - your trading
-					history</li>
-				<li><a href="wealth.html">Wealth (Shares + Cash)</a> - wealth
-					of everyone in the class&nbsp;</li>
-				<li><a href="trading.htm">Trading Rules</a> - rules and
-					information on trading</li>
-			</ul>
 
-			<!--  Go to the <a href="admin/">administration tools</a> -->
-
-		</div>
-
-
-		<div align="center">
-			<hr />
-		</div>
-
-
-
-		<div align="center">
-			<center>
-
-				<BR /> Our records indicate the you last loged in on
-				<!--=$_SESSION["lastlogin"]? -->
-				<br /> If you did not please check your portfolio and speak to the
-				course lecturer
-			</center>
-		</div>
 	</div>
-
-
 </body>
 </html>

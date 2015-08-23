@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-<!--  Request-scope beans for TaskList - actually just the handler -->
+<!-- Request-scope beans for TaskList - actually just the handler -->
 <beans>
-	
+
 	<bean id="shareGame" class="org.sakaiproject.sharegame.tool.producers.ShareGame">
+		<property name="developerHelperService"
+			ref="org.sakaiproject.entitybroker.DeveloperHelperService" />
 	</bean>
-	
-		
-	<bean  id="trade" class="org.sakaiproject.sharegame.tool.producers.Trade">
-	</bean> 
- 
+
+
+	<bean id="trade" class="org.sakaiproject.sharegame.tool.producers.TradeTool">
+	</bean>
+
 </beans>
