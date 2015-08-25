@@ -26,17 +26,13 @@ $arecordset=pg_exec($shareconn,"Select * from companies,sector where companies.s
  <th align="right">Code</th>
  <th align="right">Sector</th>
 </tr>
-<!-- ?
-for ($i=0;$i<pg_numrows($arecordset);$i++) {
-
-? -->
-			<tr>
-				<td><a href="companies2.php?code="><!-- ?=pg_result($arecordset,$i,"companycode")? --><!-- ?=pg_result($arecordset,$i,"companyname")? --></a></td>
+			<tr rsf:id=":thCM">
+				<td><a href="companies2.html?code=" rsf:id="companyCode">CN<!-- ?=pg_result($arecordset,$i,"companycode")? --><!-- ?=pg_result($arecordset,$i,"companyname")? --></a></td>
 				<td align="right">
-					<!-- ?=pg_result($arecordset,$i,"companycode")? -->
+					<span rsf:id="companyName">CN</span><!-- ?=pg_result($arecordset,$i,"companycode")? -->
 				</td>
 				<td align="right">
-					<!-- ?=pg_result($arecordset,$i,"sectorname")? -->
+					<span rsf:id="sectorName"> SM</span>
 				</td>
 			</tr>
 			<!-- ?
