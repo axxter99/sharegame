@@ -14,32 +14,26 @@
 
 		<center>
 			<a href="javascript:history.go(-1)">Back</a>
-			<hr/>
+			<hr />
 
 			<!-- ?
 sharedbopen();
 $arecordset=pg_exec($shareconn,"Select * from companies,sector where companies.sector=sector.sectorid and used order by companyname");
 ? -->
-<table width="50%">
-<tr>
- <th align="left">Company name</th>
- <th align="right">Code</th>
- <th align="right">Sector</th>
-</tr>
-			<tr rsf:id="thCM:">
-				<td><a href="companies2.html?code=" rsf:id="companyCode">CN<!-- ?=pg_result($arecordset,$i,"companycode")? --><!-- ?=pg_result($arecordset,$i,"companyname")? --></a></td>
-				<td align="right">
-					<span rsf:id="companyName">CN</span><!-- ?=pg_result($arecordset,$i,"companycode")? -->
-				</td>
-				<td align="right">
-					<span rsf:id="sectorName"> SM</span>
-				</td>
-			</tr>
-			<!-- ?
-}
- # arecordset.MoveNext
-#wend
-?-->
+			<table id="sortableTable" class="listHier lines nolines"
+				cellspacing="0" cellpadding="0" border="0">
+				<tr>
+					<th align="left">Company name</th>
+					<th align="right">Code</th>
+					<th align="right">Sector</th>
+				</tr>
+				<tbody>
+					<tr rsf:id="thCM:">
+						<td><a href="companies2.html?code=" rsf:id="companyCode">CN</a></td>
+						<td align="right"><span rsf:id="companyName">CN</span></td>
+						<td align="right"><span rsf:id="sectorName"> SM</span></td>
+					</tr>
+				</tbody>
 			</table>
 		</center>
 	</div>
