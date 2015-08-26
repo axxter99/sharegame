@@ -36,23 +36,7 @@
       			<version>1.0-SNAPSHOT</version>
       			<scope>runtime</scope>
     		</dependency>
-			
-			<!-- third party dependencies -->
-			<dependency>
-				<groupId>org.apache.wicket</groupId>
-				<artifactId>wicket</artifactId>
-				<version>1.4.23</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.wicket</groupId>
-				<artifactId>wicket-spring</artifactId>
-				<version>1.4.23</version>
-	    	</dependency>
-		
-			  
 
-			
-			<!-- sakai dependencies -->
 			
 
 		</dependencies>
@@ -91,6 +75,6 @@
     <module>tool</module>
     <module>api</module>
    <module>impl</module>
-   <!--  <module>pack</module>-->
+    <module>pack</module>
   </modules>
 </project>
