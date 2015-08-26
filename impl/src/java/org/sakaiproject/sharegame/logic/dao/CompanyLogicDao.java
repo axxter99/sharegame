@@ -44,7 +44,8 @@ public class CompanyLogicDao implements CompanyLogic, ContextualUserDisplayServi
 		e.setSector(1);
 
 		c.add(e);
-		
+		Company f = new Company(1, "BCE", "and sdfgsd");
+		c.add(f);
 		return c;
 	}
 
