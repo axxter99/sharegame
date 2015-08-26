@@ -27,7 +27,12 @@ public class CompanyInfo implements ViewComponentProducer {
 		//}
 		
 		List<Company> c = new ArrayList<Company>();
+		Company e = new Company();
 		
+				
+		c.add(e);
+
+
 		log.info("c: " + c.size());
 		for (int i = 1; i <= c.size(); i++ ) {
 			log.info("for!");
