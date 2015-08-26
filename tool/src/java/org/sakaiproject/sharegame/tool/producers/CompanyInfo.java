@@ -1,11 +1,10 @@
 package org.sakaiproject.sharegame.tool.producers;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 
 import uk.org.ponder.rsf.components.UIBranchContainer;
@@ -20,6 +19,11 @@ public class CompanyInfo implements ViewComponentProducer {
 	private static Log log = LogFactory.getLog(CompanyInfo.class);
 	public static final String VIEW_ID = "companyinfo";
 
+	private CompanyLogic companyLogic; 
+	public void setCompanyLogic(CompanyLogic companyLogic) {
+		this.companyLogic = companyLogic;
+	}
+
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("CompanyInfo!");
@@ -33,13 +37,7 @@ public class CompanyInfo implements ViewComponentProducer {
 		// <!-- ?=pg_result($arecordset,$i,"sectorname")? -->
 		// }
 
-		List<Company> c = new ArrayList<Company>();
-		Company e = new Company();
-		e.setCompanyCode("AGL");
-		e.setCompanyName("Anglo American plc");
-		e.setSector(1);
-
-		c.add(e);
+		List<Company> c = companyLogic.getCompany();
 		
 		log.info("c: " + c.size());
 		for (int i = 0; i < c.size(); i++) {

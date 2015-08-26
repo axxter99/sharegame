@@ -15,6 +15,8 @@
 	<bean id="commerce" class="org.sakaiproject.sharegame.tool.producers.Commerce">
 	</bean>
 	
-	<bean id="companyInfo" class="org.sakaiproject.sharegame.tool.producers.CompanyInfo" />
+	<bean id="companyInfo" class="org.sakaiproject.sharegame.tool.producers.CompanyInfo">
+	<property name="companyLogic" ref="org.sakaiproject.sharegame.logic.CompanyLogic"/>
+	</bean>
 
 </beans>
