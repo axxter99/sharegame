@@ -26,7 +26,7 @@ $arecordset=pg_exec($shareconn,"Select * from companies,sector where companies.s
  <th align="right">Code</th>
  <th align="right">Sector</th>
 </tr>
-			<tr rsf:id=":thCM">
+			<tr rsf:id="thCM:">
 				<td><a href="companies2.html?code=" rsf:id="companyCode">CN<!-- ?=pg_result($arecordset,$i,"companycode")? --><!-- ?=pg_result($arecordset,$i,"companyname")? --></a></td>
 				<td align="right">
 					<span rsf:id="companyName">CN</span><!-- ?=pg_result($arecordset,$i,"companycode")? -->
