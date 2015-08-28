@@ -12,7 +12,7 @@
  * Aaron Zeckoski (azeckoski@gmail.com) (aaronz@vt.edu) (aaron@caret.cam.ac.uk)
  */
 
-package org.sakaiproject.useralias.test;
+package org.sakaiproject.sharegame.test;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
