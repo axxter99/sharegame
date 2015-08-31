@@ -16,11 +16,13 @@ public class CompanyLogicDao implements CompanyLogic {
 		List<Company> c = new ArrayList<Company>();
 		Company e = new Company();
 		e.setCompanyCode("AGL");
+		e.setId(1);
 		e.setCompanyName("Anglo American plc");
 		e.setSector(1);
 
 		c.add(e);
 		Company f = new Company(2, "BCE", "and sdfgsd");
+		e.setSector(1);
 		c.add(f);
 		return c;
 	}

@@ -3,6 +3,9 @@
 
 <beans>
 
+    <bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao">
+	</bean>
+	
 	<!--  SakaiProxy -->
  	<bean id="org.sakaiproject.sharegame.logic.SakaiProxy"
     	class="org.sakaiproject.sharegame.logic.SakaiProxyImpl"
@@ -29,6 +32,7 @@
     	
     </bean>
     
+  
     <!-- DAO. This uses the DataSource that has already been setup by Sakai  -->
 	<bean id="org.sakaiproject.sharegame.dao.ProjectDao"
 		class="org.sakaiproject.sharegame.dao.impl.ProjectDaoImpl"
@@ -58,4 +62,5 @@
         <property name="timeToIdle" value="3600" />
     </bean>
 
+	
 </beans>

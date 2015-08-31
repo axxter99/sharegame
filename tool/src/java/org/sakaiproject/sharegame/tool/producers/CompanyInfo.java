@@ -9,9 +9,11 @@ import org.sakaiproject.sharegame.model.Company;
 
 import uk.org.ponder.rsf.components.UIBranchContainer;
 import uk.org.ponder.rsf.components.UIContainer;
+import uk.org.ponder.rsf.components.UIInternalLink;
 import uk.org.ponder.rsf.components.UIOutput;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
+import uk.org.ponder.rsf.viewstate.SimpleViewParameters;
 import uk.org.ponder.rsf.viewstate.ViewParameters;
 
 public class CompanyInfo implements ViewComponentProducer {
@@ -19,7 +21,8 @@ public class CompanyInfo implements ViewComponentProducer {
 	private static Log log = LogFactory.getLog(CompanyInfo.class);
 	public static final String VIEW_ID = "companyinfo";
 
-	private CompanyLogic companyLogic; 
+	private CompanyLogic companyLogic;
+
 	public void setCompanyLogic(CompanyLogic companyLogic) {
 		this.companyLogic = companyLogic;
 	}
@@ -44,9 +47,14 @@ public class CompanyInfo implements ViewComponentProducer {
 			Company q = c.get(i);
 			log.info(q.getCompanyCode() + ": " + q.getCompanyName());
 			UIBranchContainer row = UIBranchContainer.make(tofill, "thCM:");
-			UIOutput.make(row, "companyCode", q.getCompanyCode());
+			UIInternalLink.make(row, "companyCode", q.getCompanyCode(), new SimpleViewParameters(Companies2.VIEW_ID));
 			UIOutput.make(row, "companyName", q.getCompanyName());
-			UIOutput.make(row, "sectorName", q.getSector().toString());
+			
+			try {
+				UIOutput.make(row, "sectorName", q.getSector().toString());
+			} catch (NullPointerException e) {
+				log.error(e.fillInStackTrace());
+			}
 			
 		}
 

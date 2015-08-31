@@ -39,8 +39,8 @@
       </property>
       <property name="mappingResources">
       	<list>
-      		<value>org/sakaiproject/useralias/hbm/UserAliasItem.hbm.xml</value>
-			<value>org/sakaiproject/useralias/hbm/UserAliasSite.hbm.xml</value>
+      		<value>org/sakaiproject/sharegame/hbm/Company.hbm.xml</value>
+			<value>org/sakaiproject/sharegame/hbm/BankAccountsUser.hbm.xml</value>
       	</list>
       </property>
       <property name="hibernateProperties">

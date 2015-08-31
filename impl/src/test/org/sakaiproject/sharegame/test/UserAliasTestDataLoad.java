@@ -29,7 +29,7 @@ import java.util.Set;
 
 
 import org.sakaiproject.genericdao.api.GenericDao;
-import org.sakaiproject.useralias.model.UserAliasItem;
+
 
 
 /**
@@ -108,15 +108,7 @@ public class UserAliasTestDataLoad {
 
    /*
     * Some Content Review items
-    * 
-    */
-   public UserAliasItem item1; 
-   
-   public UserAliasItem item2;
-   public UserAliasItem item3;
-   public UserAliasItem item4;
-   public UserAliasItem item5;
-   public UserAliasItem item6;
+    
    
 
    public UserAliasTestDataLoad() {
@@ -148,9 +140,9 @@ public class UserAliasTestDataLoad {
     * Example: dao.save(templateUser);
     */
    public void saveAll(GenericDao dao) {
-	   dao.save(item1);
-	   dao.save(item2);
-	   dao.save(item3);
+	  // dao.save(item1);
+	   //dao.save(item2);
+	   //dao.save(item3);
    }
 
    /**

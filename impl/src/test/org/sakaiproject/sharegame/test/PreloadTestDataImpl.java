@@ -12,11 +12,11 @@
  * Aaron Zeckoski (azeckoski@gmail.com) (aaronz@vt.edu) (aaron@caret.cam.ac.uk)
  */
 
-package org.sakaiproject.useralias.test;
+package org.sakaiproject.sharegame.test;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sakaiproject.useralias.dao.impl.UserAliasDao;
+//import org.sakaiproject.useralias.dao.impl.UserAliasDao;
 
 
 
@@ -45,10 +45,10 @@ public class PreloadTestDataImpl {
 
    private static Log log = LogFactory.getLog(PreloadTestDataImpl.class);
 
-   private UserAliasDao dao;
-   public void setDao(UserAliasDao dao) {
-      this.dao = dao;
-   }
+   //private UserAliasDao dao;
+   //public void setDao(UserAliasDao dao) {
+    //  this.dao = dao;
+   //}
 
 
 

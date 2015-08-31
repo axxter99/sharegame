@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-    <artifactId>sharegame</artifactId>
-    <groupId>org.sakaiproject.sharegame</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-	
+		<artifactId>sharegame</artifactId>
+		<groupId>org.sakaiproject.sharegame</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
 	<name>sharegame - Implementation</name>
 	<groupId>org.sakaiproject.sharegame</groupId>
-		<artifactId>sharegame-impl</artifactId>
+	<artifactId>sharegame-impl</artifactId>
 
 	<packaging>jar</packaging>
-	
-  	<dependencies>
 
-    	<!-- project dependencies -->
-    	<dependency>
+	<dependencies>
+
+		<!-- project dependencies -->
+		<dependency>
 			<groupId>org.sakaiproject.sharegame</groupId>
-		<artifactId>sharegame-api</artifactId>
+			<artifactId>sharegame-api</artifactId>
 		</dependency>
-    	
-    	<!-- third party dependencies -->
+
+		<!-- third party dependencies -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -33,19 +34,24 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-		</dependency>        
+		</dependency>
 		<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-        </dependency> 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>       
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-        </dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache-core</artifactId>
@@ -53,44 +59,42 @@
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
-			
+
 		</dependency>
-		     <!-- generic DAO -->
+		<!-- generic DAO -->
 		<dependency>
 			<groupId>org.sakaiproject</groupId>
 			<artifactId>generic-dao</artifactId>
 			<version>${generic-dao.version}</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>commons-configuration</groupId>
-			<artifactId>commons-configuration</artifactId>
-		</dependency>-->
-		
+		<!-- <dependency> <groupId>commons-configuration</groupId> <artifactId>commons-configuration</artifactId> 
+			</dependency> -->
+
 		<!-- Sakai dependencies -->
-        <dependency>
-            <groupId>org.sakaiproject.kernel</groupId>
-            <artifactId>sakai-kernel-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.sakaiproject.kernel</groupId>
-            <artifactId>sakai-component-manager</artifactId>
-        </dependency>
-        <dependency>
+		<dependency>
 			<groupId>org.sakaiproject.kernel</groupId>
-  			<artifactId>sakai-kernel-util</artifactId>
+			<artifactId>sakai-kernel-api</artifactId>
 		</dependency>
-		
-  	</dependencies>
-  	
+		<dependency>
+			<groupId>org.sakaiproject.kernel</groupId>
+			<artifactId>sakai-component-manager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.sakaiproject.kernel</groupId>
+			<artifactId>sakai-kernel-util</artifactId>
+		</dependency>
+
+	</dependencies>
+
 	<build>
 		<resources>
-            <resource>
-                <directory>${basedir}/src/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
+			<resource>
+				<directory>${basedir}/src/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
-	
+
 </project>
