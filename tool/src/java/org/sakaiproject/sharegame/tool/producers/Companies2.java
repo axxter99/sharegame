@@ -9,6 +9,7 @@ import org.sakaiproject.sharegame.model.Company;
 
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIInternalLink;
+import uk.org.ponder.rsf.components.UILink;
 import uk.org.ponder.rsf.components.UIOutput;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
@@ -35,7 +36,8 @@ public class Companies2 implements ViewComponentProducer {
 		
 		UIOutput.make(tofill, "companyCode", q.getCompanyCode()); 
 		UIOutput.make(tofill, "companyName", q.getCompanyName());
-		
+		//UIInternalLink.make(tofill, "website", q.getWebsite, viewparams);
+		UILink.make(tofill, "website", q.getWebsite(), q.getWebsite());
 		try {
 			UIOutput.make(tofill, "sectorName", q.getSector().toString());
 		} catch (NullPointerException e) {

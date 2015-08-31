@@ -23,7 +23,7 @@ public class CompanyLogicDao implements CompanyLogic {
 
 		c.add(e);
 		Company f = new Company(2, "BCE", "and sdfgsd", "htp:www.sdsf.com");
-		e.setSector(1);
+		f.setSector(1);
 		c.add(f);
 		return c;
 	}
