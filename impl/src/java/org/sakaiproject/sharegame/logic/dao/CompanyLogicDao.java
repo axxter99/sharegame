@@ -18,7 +18,7 @@ public class CompanyLogicDao implements CompanyLogic {
 		e.setCompanyCode("AGL");
 		e.setId(1);
 		e.setCompanyName("Anglo American plc");
-		e.setWedsite("http://www.angloamerican.com/");
+		e.setWebsite("http://www.angloamerican.com/");
 		e.setSector(1);
 
 		c.add(e);
