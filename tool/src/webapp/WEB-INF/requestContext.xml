@@ -21,6 +21,8 @@
 	</bean>
 	
 	<bean id="companies2" class="org.sakaiproject.sharegame.tool.producers.Companies2">
+	 <property name="companyLogic"
+			ref="org.sakaiproject.sharegame.logic.CompanyLogic" />
 	</bean>
 
 </beans>

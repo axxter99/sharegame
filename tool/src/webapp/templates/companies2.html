@@ -28,15 +28,15 @@ $arecordset=pg_exec($shareconn,"Select * From companies, sector where companies.
 				<td id="tabcolor3" colspan="2"><span class="normal"> <!-- ?=pg_result($arecordset,0,"quickname")? -->
 				</span></td>
 				<td id="tabcolor1" colspan="2"><span class="normal"><b>Name:</b></span></td>
-				<td id="tabcolor3" colspan="2"><span class="normal"> <!-- ?=pg_result($arecordset,0,"companyname")? -->
+				<td id="tabcolor3" colspan="2"><span class="normal" rsf:id="companyName"> <!-- ?=pg_result($arecordset,0,"companyname")? -->
 				</span></td>
 			</tr>
 			<tr>
 				<td id="tabcolor1" colspan="2"><span class="normal"><b>Code:</b></span></td>
-				<td id="tabcolor3" colspan="2"><span class="normal"> <!-- ?=pg_result($arecordset,0,"companycode")? -->
+				<td id="tabcolor3" colspan="2"><span class="normal" rsf:id="companyCode" > <!-- ?=pg_result($arecordset,0,"companycode")? -->
 				</span></td>
 				<td id="tabcolor1" colspan="2"><span class="normal"> <b>Sector:</b></span></td>
-				<td id="tabcolor3" colspan="2"><span class="normal"> <!-- ?=pg_result($arecordset,0,"sectorname")? -->
+				<td id="tabcolor3" colspan="2"><span class="normal" rsf:id="sectorName"> <!-- ?=pg_result($arecordset,0,"sectorname")? -->
 				</span></td>
 			</tr>
 			<tr>
