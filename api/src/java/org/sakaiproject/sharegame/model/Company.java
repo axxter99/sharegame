@@ -6,6 +6,10 @@ import java.io.Serializable;
  * @author dhorwitz
  *
  */
+/**
+ * @author dhorwitz
+ *
+ */
 public class Company implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -29,14 +33,16 @@ public class Company implements Serializable {
 	private String companyCode;
 	private String companyName;
 	private Integer sector;
+	private String website;
 	
 	public Company() {
 		
 	}
-	public Company(long id, String companyCode, String companyName) {
+	public Company(long id, String companyCode, String companyName, String website) {
 		this.id = id;
 		this.companyCode = companyCode;
 		this.companyName = companyName;
+		this.website = website;
 	}
 	
 	public long getId() {
@@ -63,6 +69,20 @@ public class Company implements Serializable {
 	}
 	public void setSector(Integer sector) {
 		this.sector = sector;
+	}
+	
+	/**
+	 * @return
+	 */
+	public String getWebsite() {
+		return website;
+	}
+
+	/**
+	 * @param website
+	 */
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 	
 	

@@ -18,10 +18,11 @@ public class CompanyLogicDao implements CompanyLogic {
 		e.setCompanyCode("AGL");
 		e.setId(1);
 		e.setCompanyName("Anglo American plc");
+		e.setWedsite("http://www.angloamerican.com/");
 		e.setSector(1);
 
 		c.add(e);
-		Company f = new Company(2, "BCE", "and sdfgsd");
+		Company f = new Company(2, "BCE", "and sdfgsd", "htp:www.sdsf.com");
 		e.setSector(1);
 		c.add(f);
 		return c;
