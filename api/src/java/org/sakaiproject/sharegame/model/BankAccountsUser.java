@@ -15,14 +15,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BankAccountsUser implements Serializable {
-
+/**CREATE TABLE bankaccounts (
+    mid character varying(10) NOT NULL,
+    balance numeric(20,4) DEFAULT 0 NOT NULL
+);
+**/
 	private static final long serialVersionUID = 1L;
 	
 	private long id;
 	
 	private String user;
 	
-	private long c;
+	private long balance;
 	
 	
 }

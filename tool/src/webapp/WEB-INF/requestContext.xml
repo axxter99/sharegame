@@ -24,5 +24,6 @@
 	 <property name="companyLogic"
 			ref="org.sakaiproject.sharegame.logic.CompanyLogic" />
 	</bean>
-
+<bean id="Trading" class="org.sakaiproject.sharegame.tool.producers.Trading">
+</bean>
 </beans>

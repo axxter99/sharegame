@@ -64,6 +64,10 @@ public class Company implements Serializable {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
+	
+	/**
+	 * @return
+	 */
 	public Integer getSector() {
 		return sector;
 	}
