@@ -34,13 +34,27 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		
-		<!-- Sakai dependencies -->
+		
 		<!-- RSF dependencies -->
 		<dependency>
-			<groupId>uk.org.ponder.sakairsf</groupId>
-			<artifactId>sakairsf</artifactId>
-			<version>${sakairsf.version}</version>
+			<groupId>org.sakaiproject.rsf</groupId>
+			<artifactId>sakai-rsf-core</artifactId>
+			<version>${sakai.version}</version>
+			<type>jar</type>
 		</dependency>
+		<dependency>
+			<groupId>org.sakaiproject.rsf</groupId>
+			<artifactId>sakai-rsf-web-evolvers</artifactId>
+			<version>${sakai.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.sakaiproject.rsf</groupId>
+			<artifactId>sakai-rsf-web-templates</artifactId>
+			<version>${sakai.version}</version>
+			<type>war</type>
+		</dependency>
+		<!-- Sakai dependencies -->
        	<dependency>
            	<groupId>org.sakaiproject.kernel</groupId>
 			<artifactId>sakai-kernel-api</artifactId>
