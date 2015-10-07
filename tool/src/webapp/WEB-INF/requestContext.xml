@@ -19,11 +19,13 @@
 		<property name="companyLogic"
 			ref="org.sakaiproject.sharegame.logic.CompanyLogic" />
 	</bean>
-	
+
 	<bean id="companies2" class="org.sakaiproject.sharegame.tool.producers.Companies2">
-	 <property name="companyLogic"
+		<property name="companyLogic"
 			ref="org.sakaiproject.sharegame.logic.CompanyLogic" />
 	</bean>
-<bean id="Trading" class="org.sakaiproject.sharegame.tool.producers.Trading">
-</bean>
+	<bean id="Trading" class="org.sakaiproject.sharegame.tool.producers.Trading">
+	</bean>
+
+	<bean id="Graphs" class="org.sakaiproject.sharegame.tool.producers.Graphs"></bean>
 </beans>

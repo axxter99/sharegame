@@ -2,61 +2,38 @@
 
 <head>
 <title>Share Graphs</title>
-
+<link rsf:id="scr=portal-matter" href="/library/skin/tool_base.css"
+	type="text/css" rel="stylesheet" media="all" />
+<link rsf:id="scr=portal-matter" href="/library/skin/default/tool.css"
+	type="text/css" rel="stylesheet" media="all" />
+<script rsf:id="scr=portal-matter" type="text/javascript"
+	language="JavaScript" src="/library/js/headscripts.js"></script>
 </head>
 
-<body>
-
-<center>
-
-<a href="javascript:history.go(-1)">Back</a>
-
-<hr>
+<body rsf:id="scr=sakai-body">
+<div class="portletBody">
 
 
 
 
-<table width="90%" border="1">
- 
-    <tr>
-      <td><b>Company</b></td>
-      <td><b>GraphURL</b></td>
- 
-      
-    </tr>
-    <!-- ?
-$Lastmid =$_SESSION["studentid"];
-#    'response.write session.contents("mid")
- sharedbopen();
+	<table width="90%" border="1">
+		<thead>
+			<tr>
+				<td><b>Company</b></td>
+				<td><b>GraphURL</b></td>
 
-$sql="SELECT DISTINCT companies.companyname, companies.website, companies.companycode, companies.quickname,companies.cid, portfoliomanagers.mid FROM Companies, groups_share_link,tblgroups,portfoliomanagers,manager_grps_link WHERE (((companies.Used)=TRUE))  and portfoliomanagers.mid='".$Lastmid ."' and groups_share_link.group_id=tblgroups.tblgroups_id and tblgroups.tblgroups_id=manager_grps_link.group_id and manager_grps_link.mid=portfoliomanagers.mid group by companyname, website, companyCode,quickname,companies.cid, portfoliomanagers.mid;";
-$arecordset=pg_exec($shareconn,$sql); 
-for ($i=0;$i<pg_numrows($arecordset);$i++) {
-$cname=pg_result($arecordset,$i,"companyName");
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>AGN</td>
+				<td>ULR</td>
+			</tr>
+		</tbody>
 
-if (!is_null(pg_result($arecordset,$i,"website"))) {
- $cname="<a href=\"".pg_result($arecordset,$i,"website")."\">".$cname."</a>";
-}
-#'http://www.moneymax.co.za/chart_centre/companies/default.asp?ticker="&lcase(arecordset("companyCode"))&"&ctype=
-$graphurl="<a href=companygraph.php?cid=".pg_fetch_result($arecordset,$i,"cid")."&months=6>graph</a>";
-if (! is_null(pg_result($arecordset,0,"quickname"))) {
-  $graphurl2="<a href=\"http://www.sharenet.co.za/webgraph/graph.phtml?sharename=".pg_result($arecordset,$i,"quickname")."\"> trend graph (quick)</a>";
-  }
-if (is_null(pg_result($arecordset,$i,"quickname"))) {
-  $graphurl2="";
-}
+	</table>
 
-$dataurl="<a href=\"http://www.moneymax.co.za/cosnapshots/ratios.asp?co_refs=".pg_result($arecordset,0,"companycode")."\">Snapshot data</a>";
-    echo "<tr><Td>".$cname."</td><TD>".$graphurl."</td></tr>";
 
-} #wend    
-    ?-->
-    
-    </table>
-     <p align="center"><!--webbot bot="Navigation" S-Type="children" S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="TRUE" U-Page S-Target startspan --><!--webbot bot="Navigation" endspan i-checksum="0" --></p>
-    <p align="center"><img src="../images/WB01727_.gif" alt="WB01727_.gif (697 bytes)" WIDTH="482" HEIGHT="12"> </p>
-    <p align="center">More on shares: <a href="http://www.sharenet.co.za/webgraph/found.phtml?sector=14&amp;exch=JSE">http://www.sharenet.co.za/webgraph/found.phtml?sector=14&amp;exch=JSE</a>
-    </p>
-    
+</div>
 </body>
 </html>
