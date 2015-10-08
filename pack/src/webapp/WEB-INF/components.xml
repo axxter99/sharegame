@@ -6,6 +6,11 @@
     <bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao">
 	</bean>
 	
+	<bean id="org.sakaiproject.sharegame.logic.ShareGameUser" class="org.sakaiproject.sharegame.impl.ShareGameUserImpl">
+		<property name="developerHelperService" ref="org.sakaiproject.entitybroker.DeveloperHelperService" />
+		<property name="userDirectoryService" ref="org.sakaiproject.user.api.UserDirectoryService"/>
+	</bean>
+	
 	<!--  SakaiProxy -->
  	<bean id="org.sakaiproject.sharegame.logic.SakaiProxy"
     	class="org.sakaiproject.sharegame.logic.SakaiProxyImpl"
