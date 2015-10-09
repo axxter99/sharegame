@@ -5,9 +5,11 @@ import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
 
 import uk.org.ponder.rsf.components.UIContainer;
+import uk.org.ponder.rsf.components.UIInternalLink;
 import uk.org.ponder.rsf.components.UIOutput;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
+import uk.org.ponder.rsf.viewstate.SimpleViewParameters;
 import uk.org.ponder.rsf.viewstate.ViewParameters;
 
 public class Commerce implements ViewComponentProducer {
@@ -27,6 +29,7 @@ public class Commerce implements ViewComponentProducer {
 		log.info("commerce!");
 
 		UIOutput.make(tofill, "shareUser", shareGameUser.getName() + " (" + shareGameUser.getUserId() + ")");
+		UIInternalLink.make(tofill, "trading", new SimpleViewParameters(TradeTool.VIEW_ID));
 	}
 
 	@Override
