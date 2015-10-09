@@ -34,7 +34,7 @@ public class ShareGameUserImpl implements ShareGameUser {
 	@Override
 	public String getName() {
 		
-		return userDirectoryService.getCurrentUser().getFirstName() + " " + userDirectoryService.getCurrentUser().getLastName();
+		return userDirectoryService.getCurrentUser().getDisplayName();
 	}
 	@Override
 	public String getEmail() {

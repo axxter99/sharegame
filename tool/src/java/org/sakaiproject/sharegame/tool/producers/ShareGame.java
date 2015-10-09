@@ -24,11 +24,6 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		return VIEW_ID;
 	}
 
-	private DeveloperHelperService developerHelperService;
-	public void setDeveloperHelperService(
-			DeveloperHelperService developerHelperService) {
-		this.developerHelperService = developerHelperService;
-	}
 
 	private ShareGameUser shareGameUser;
 	
@@ -47,7 +42,7 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		UIInternalLink.make(tofill, "Graphs", new SimpleViewParameters(Graphs.VIEW_ID));
 		
 		UIInternalLink.make(tofill, "trading", new SimpleViewParameters(Trading.VIEW_ID));
-		UIOutput.make(tofill, "shareUser", developerHelperService.getCurrentUserId());
+		UIOutput.make(tofill, "shareUser", shareGameUser.getName() + " (" + shareGameUser.getUserId() + ")");
 		
 	}
 
