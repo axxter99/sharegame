@@ -1,71 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
+	<!-- <bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao"> 
+		</bean> -->
 
-    <bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao">
-	</bean>
-	
-	<bean id="org.sakaiproject.sharegame.logic.ShareGameUser" class="org.sakaiproject.sharegame.impl.ShareGameUserImpl">
-		<property name="developerHelperService" ref="org.sakaiproject.entitybroker.DeveloperHelperService" />
+	<bean id="org.sakaiproject.sharegame.logic.ShareGameUser" class="org.sakaiproject.sharegame.impl.ShareGameUserImpl"
+		init-method="init"
+		singleton="true">
 		<property name="userDirectoryService" ref="org.sakaiproject.user.api.UserDirectoryService"/>
-	</bean>
-	
-	<!--  SakaiProxy -->
- 	<bean id="org.sakaiproject.sharegame.logic.SakaiProxy"
-    	class="org.sakaiproject.sharegame.logic.SakaiProxyImpl"
-        init-method="init">
-        
-        <!-- API injection -->
-        <property name="securityService" ref="org.sakaiproject.authz.api.SecurityService" />
-        <property name="sessionManager" ref="org.sakaiproject.tool.api.SessionManager" />
-        <property name="toolManager" ref="org.sakaiproject.tool.api.ToolManager" />
-        <property name="userDirectoryService" ref="org.sakaiproject.user.api.UserDirectoryService" />
-		<property name="eventTrackingService" ref="org.sakaiproject.event.api.EventTrackingService" />
-		<property name="serverConfigurationService" ref="org.sakaiproject.component.api.ServerConfigurationService" />
-		<property name="siteService" ref="org.sakaiproject.site.api.SiteService" />
-		
-	</bean>
-	
-	<!-- ProjectLogic -->
-	<bean id="org.sakaiproject.sharegame.logic.ProjectLogic"
-    	class="org.sakaiproject.sharegame.logic.ProjectLogicImpl"
-    	init-method="init">
-    	
-    	<property name="dao" ref="org.sakaiproject.sharegame.dao.ProjectDao" />	
-    	<property name="cache" ref="org.sakaiproject.sharegame.cache" />	
-    	
-    </bean>
-    
-  
-    <!-- DAO. This uses the DataSource that has already been setup by Sakai  -->
-	<bean id="org.sakaiproject.sharegame.dao.ProjectDao"
-		class="org.sakaiproject.sharegame.dao.impl.ProjectDaoImpl"
-		init-method="init">
-		<property name="jdbcTemplate">
-			<bean class="org.springframework.jdbc.core.JdbcTemplate">
-				<constructor-arg type="javax.sql.DataSource">
-					<ref bean="javax.sql.DataSource" />
-				</constructor-arg>
-			</bean>
-		</property>	
-	</bean>
-	
-	<!-- Cache: ttl=1 hour -->
-    <bean id="org.sakaiproject.sharegame.cache"
-        class="org.springframework.cache.ehcache.EhCacheFactoryBean">
-        <property name="cacheManager">
-            <ref bean="org.sakaiproject.memory.api.MemoryService.cacheManager"/>
-        </property>
-        <property name="cacheName">
-            <value>org.sakaiproject.sharegame.cache</value>
-        </property>
-        <property name="maxElementsInMemory" value="1000" />
-        <property name="diskPersistent" value="false" />
-        <property name="eternal" value="false" />
-        <property name="timeToLive" value="3600" />
-        <property name="timeToIdle" value="3600" />
-    </bean>
 
+	</bean>
 	
+	<bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao" init-method="init">
+	</bean>
 </beans>

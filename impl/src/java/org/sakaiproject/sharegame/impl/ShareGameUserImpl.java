@@ -1,16 +1,20 @@
 package org.sakaiproject.sharegame.impl;
 
-import org.sakaiproject.entitybroker.DeveloperHelperService;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
 import org.sakaiproject.user.api.UserDirectoryService;
 
-public class ShareGameUserImp implements ShareGameUser {
-
-	private DeveloperHelperService developerHelperService;
-	public void setDeveloperHelperService(
-			DeveloperHelperService developerHelperService) {
-		this.developerHelperService = developerHelperService;
+public class ShareGameUserImpl implements ShareGameUser {
+	
+	private static Log log = LogFactory.getLog(ShareGameUserImpl.class);
+	
+	public void init(){
+		log.info("init()");
 	}
+	
+
 	
 	private UserDirectoryService userDirectoryService;
 	public void setUserDirectoryService(UserDirectoryService userDirectoryService) {
@@ -20,21 +24,21 @@ public class ShareGameUserImp implements ShareGameUser {
 	@Override
 	public String getUserId() {
 		
-		return developerHelperService.getCurrentUserId();
+		return userDirectoryService.getCurrentUser().getEid();
 	}
 	@Override
 	public String getUuId() {
 		
-		return userDirectoryService.getCurrentUser().getEid();
+		return userDirectoryService.getCurrentUser().getId();
 	}
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
+		
 		return userDirectoryService.getCurrentUser().getFirstName() + " " + userDirectoryService.getCurrentUser().getLastName();
 	}
 	@Override
 	public String getEmail() {
-		// TODO Auto-generated method stub
+		
 		return userDirectoryService.getCurrentUser().getEmail();
 	}
 	

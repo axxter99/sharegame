@@ -3,13 +3,17 @@ package org.sakaiproject.sharegame.logic.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 
 public class CompanyLogicDao implements CompanyLogic {
 
-
-
+	private static Log log = LogFactory.getLog(CompanyLogicDao.class);
+	public void init(){
+		log.info("init()");
+	}
 
 	@Override
 	public List<Company> getCompany() {
