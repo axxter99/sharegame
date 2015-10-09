@@ -41,22 +41,22 @@ public class CompanyInfo implements ViewComponentProducer {
 		// }
 
 		List<Company> c = companyLogic.getCompany();
-		
-		log.info("c: " + c.size());
+
+		log.info("c: " + c.size()); 
+
 		for (int i = 0; i < c.size(); i++) {
+
 			Company q = c.get(i);
+			log.info("q: " + i);
 			log.info(q.getCompanyCode() + ": " + q.getCompanyName());
 			UIBranchContainer row = UIBranchContainer.make(tofill, "thCM:");
 			UIInternalLink.make(row, "companyCode", q.getCompanyCode(), new SimpleViewParameters(Companies2.VIEW_ID));
 			UIOutput.make(row, "companyName", q.getCompanyName());
-			
-			try {
-				UIOutput.make(row, "sectorName", q.getSector().toString());
-			} catch (NullPointerException e) {
-				log.error(e.fillInStackTrace());
-			}
-			
-		}
+
+			UIOutput.make(row, "sectorName", q.getSector().toString()); 
+
+		} 
+		log.info("lesh");
 
 	}
 

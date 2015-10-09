@@ -20,7 +20,7 @@
 	</bean>
 
 	<bean id="companyInfo" class="org.sakaiproject.sharegame.tool.producers.CompanyInfo">
-		<property name="companyLogic"
+		 <property name="companyLogic"
 			ref="org.sakaiproject.sharegame.logic.CompanyLogic" />
 	</bean>
 
