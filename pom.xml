@@ -77,7 +77,7 @@
    <module>impl</module>
     <module>pack</module>
   </modules>
-  <build>
+  <!--<build>
         <plugins>
 	  <plugin>
   <groupId>org.codehaus.mojo</groupId>
@@ -104,6 +104,6 @@
   </dependencies>
 </plugin>
 </plugins>
-</build>
+</build>-->
   
 </project>
