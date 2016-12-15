@@ -4,7 +4,7 @@
 	<parent>
     <artifactId>sharegame</artifactId>
     <groupId>org.sakaiproject.sharegame</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <version>11-SNAPSHOT</version>
   </parent>
 	
 	<name>sharegame - Components</name>
