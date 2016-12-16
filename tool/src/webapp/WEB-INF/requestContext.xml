@@ -3,15 +3,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+ <!--  Renderers -->
+  <bean id="navBarRenderer" class="org.sakaiproject.sharegame.tool.renderers.NavBarRenderer">
+  </bean>
+ 	
 	<bean id="shareGame" class="org.sakaiproject.sharegame.tool.producers.ShareGame">
 		<property name="shareGameUser"
 			ref="org.sakaiproject.sharegame.logic.ShareGameUser" />
+			<property name="navBarRenderer" ref="navBarRenderer"/>
 	</bean>
 
-
+	<!-- Producers -->
 	<bean id="trade" class="org.sakaiproject.sharegame.tool.producers.TradeTool">
 		<property name="shareGameUser"
 			ref="org.sakaiproject.sharegame.logic.ShareGameUser" />
+			
 	</bean>
 
 	<bean id="commerce" class="org.sakaiproject.sharegame.tool.producers.Commerce">

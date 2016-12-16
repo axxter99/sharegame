@@ -24,5 +24,10 @@
 	<bean id="templateResolverStrategy" parent="CRITemplateResolverStrategy">
 		<property name="baseDirectory" value="templates/" />
 	</bean>
-
+	
+	<bean id="messageTemplateContributor" parent="templateContributorParent">
+		<property name="baseDirectory" value="component-templates/" />
+		<property name="templateNames"
+			value="navbar" />
+	</bean>
 </beans>

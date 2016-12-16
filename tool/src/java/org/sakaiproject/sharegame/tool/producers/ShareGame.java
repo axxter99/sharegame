@@ -22,8 +22,8 @@ package org.sakaiproject.sharegame.tool.producers;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
+import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIInternalLink;
@@ -51,11 +51,18 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		this.shareGameUser = shareGameUser;
 	}
 
+	private NavBarRenderer navBarRenderer;
+	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
+		this.navBarRenderer = navBarRenderer;
+	}
+	
+
 
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("ShareGame!");
 		log.info("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
-
+		log.info("NavBar:" + this.navBarRenderer);
+		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 		UIInternalLink.make(tofill, "trade-shares", new SimpleViewParameters(TradeTool.VIEW_ID));
 		UIInternalLink.make(tofill, "commerce", new SimpleViewParameters(Commerce.VIEW_ID));
 		UIInternalLink.make(tofill, "CompanyInfo", new SimpleViewParameters(CompanyInfo.VIEW_ID));
@@ -65,6 +72,8 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		UIOutput.make(tofill, "shareUser", shareGameUser.getName() + " (" + shareGameUser.getUserId() + ")");
 		
 	}
+
+
 
 	//public List<NavigationCase> reportNavigationCases() {
 	//	List<NavigationCase> togo = new ArrayList<NavigationCase>();
