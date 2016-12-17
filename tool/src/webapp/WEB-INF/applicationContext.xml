@@ -5,7 +5,7 @@
 
 	<!-- We need this file to satisfy Spring, but we don't need anything in it since we use Wicket's dependency injection -->
    	<!-- handles configuration of internationalization messages -->
-	<bean id="messageLocator" class="uk.org.ponder.springutil.SpringMessageLocator">
+	<!--  <bean id="messageLocator" class="uk.org.ponder.springutil.SpringMessageLocator">
 		<property name="messageSource">
 			<bean
 				class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -18,8 +18,14 @@
 			</bean>
 		</property>
 		<property name="localeGetter" ref="requestLocaleProxy" />
-	</bean>
+	</bean>-->
 
+	<bean id="messageSource" class="org.sakaiproject.util.ResourceLoaderMessageSource"
+		depends-on="TLABPostProcessorLoader">
+		<property name="basename"
+			value="classpath:org/sakaiproject/sharegame/bundle/Messages" />
+		<property name="cacheSeconds" value="10" />
+	</bean>
 	<!-- Control the location of the html templates (default: content/templates/) -->
 	<bean id="templateResolverStrategy" parent="CRITemplateResolverStrategy">
 		<property name="baseDirectory" value="templates/" />

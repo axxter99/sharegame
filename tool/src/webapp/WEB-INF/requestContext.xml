@@ -5,6 +5,7 @@
 
  <!--  Renderers -->
   <bean id="navBarRenderer" class="org.sakaiproject.sharegame.tool.renderers.NavBarRenderer">
+  	<property name="messageLocator" ref="messageLocator" />
   </bean>
  	
 	<bean id="shareGame" class="org.sakaiproject.sharegame.tool.producers.ShareGame">

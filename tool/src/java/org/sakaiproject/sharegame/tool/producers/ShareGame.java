@@ -27,6 +27,7 @@ import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIInternalLink;
+import uk.org.ponder.rsf.components.UIMessage;
 import uk.org.ponder.rsf.components.UIOutput;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.DefaultView;
@@ -63,12 +64,13 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		log.info("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
 		log.info("NavBar:" + this.navBarRenderer);
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
-		UIInternalLink.make(tofill, "trade-shares", new SimpleViewParameters(TradeTool.VIEW_ID));
-		UIInternalLink.make(tofill, "commerce", new SimpleViewParameters(Commerce.VIEW_ID));
-		UIInternalLink.make(tofill, "CompanyInfo", new SimpleViewParameters(CompanyInfo.VIEW_ID));
-		UIInternalLink.make(tofill, "Graphs", new SimpleViewParameters(Graphs.VIEW_ID));
+				
+		UIInternalLink.make(tofill, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));
+		UIInternalLink.make(tofill, "Graphs", UIMessage.make("admin_GR"), new SimpleViewParameters(Graphs.VIEW_ID));
+		UIInternalLink.make(tofill, "trade-shares", UIMessage.make("admin_TR"), new SimpleViewParameters(TradeTool.VIEW_ID));
+		UIInternalLink.make(tofill, "commerce", UIMessage.make("admin_TS"), new SimpleViewParameters(Commerce.VIEW_ID));	
 		
-		UIInternalLink.make(tofill, "trading", new SimpleViewParameters(Trading.VIEW_ID));
+		UIInternalLink.make(tofill, "trading", UIMessage.make("admin_TR"), new SimpleViewParameters(Trading.VIEW_ID));
 		UIOutput.make(tofill, "shareUser", shareGameUser.getName() + " (" + shareGameUser.getUserId() + ")");
 		
 	}
