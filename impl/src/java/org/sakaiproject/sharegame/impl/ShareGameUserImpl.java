@@ -130,9 +130,9 @@ public class ShareGameUserImpl implements ShareGameUser {
 		return bu;
 	}
 	
-	public List<BankAccountsUser> getBankAccountsUserSite(Set<Member> memder, long site) {
+	public List<BankAccountsUser> getBankAccountsUserSite(Set<Member> member, long site) {
 		List<BankAccountsUser> bankAccountsUser = new ArrayList<BankAccountsUser>();
-		Iterator<Member> iterator = memder.iterator();
+		Iterator<Member> iterator = member.iterator();
 		while (iterator.hasNext()) {
 			Member m = iterator.next();
 			log.debug("Menber: " + m.getUserEid() + " (" + m.getUserId() + ")");

@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>sharegame</artifactId>
 		<groupId>org.sakaiproject.sharegame</groupId>
-		<version>11-SNAPSHOT</version>
+		<version>12-SNAPSHOT</version>
 	</parent>
 
 	<name>sharegame - Implementation</name>
@@ -93,6 +93,12 @@
 			<artifactId>joda-money</artifactId>
 			<version>0.12</version>
 		</dependency>
+	   <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
