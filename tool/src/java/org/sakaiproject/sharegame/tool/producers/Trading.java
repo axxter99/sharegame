@@ -1,5 +1,7 @@
 package org.sakaiproject.sharegame.tool.producers;
 
+import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
+
 /*
  * #%L
  * sharegame - Tool
@@ -28,10 +30,15 @@ import uk.org.ponder.rsf.viewstate.ViewParameters;
 public class Trading implements ViewComponentProducer {
 
 	public static final String VIEW_ID = "trading";
+	
+	private NavBarRenderer navBarRenderer;
+	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
+		this.navBarRenderer = navBarRenderer;
+	}
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		// TODO Auto-generated method stub
-
+		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 	}
 
 	@Override

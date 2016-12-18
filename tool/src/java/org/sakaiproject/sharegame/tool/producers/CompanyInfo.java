@@ -26,6 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
+import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIBranchContainer;
 import uk.org.ponder.rsf.components.UIContainer;
@@ -46,7 +47,10 @@ public class CompanyInfo implements ViewComponentProducer {
 	public void setCompanyLogic(CompanyLogic companyLogic) {
 		this.companyLogic = companyLogic;
 	}
-
+	private NavBarRenderer navBarRenderer;
+	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
+		this.navBarRenderer = navBarRenderer;
+	}
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("CompanyInfo!");
@@ -60,6 +64,7 @@ public class CompanyInfo implements ViewComponentProducer {
 		// <!-- ?=pg_result($arecordset,$i,"sectorname")? -->
 		// }
 
+		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 		List<Company> c = companyLogic.getCompany();
 
 		log.info("c: " + c.size()); 

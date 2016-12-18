@@ -60,9 +60,9 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 
 
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
-		log.info("ShareGame!");
-		log.info("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
-		log.info("NavBar:" + this.navBarRenderer);
+		log.debug("ShareGame!");
+		log.debug("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
+		
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 				
 		UIInternalLink.make(tofill, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));

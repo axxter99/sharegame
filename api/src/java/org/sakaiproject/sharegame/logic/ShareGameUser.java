@@ -1,5 +1,10 @@
 package org.sakaiproject.sharegame.logic;
 
+import java.util.List;
+
+
+import org.sakaiproject.sharegame.model.BankAccountsUser;
+
 /*
  * #%L
  * sharegame - API
@@ -41,6 +46,31 @@ public interface ShareGameUser {
 	public String getUuId();
 	public String getName();
 	public String getEmail();
+		
+	public String getUserSortName();
+	public String getUserSortName(String id);
+	/*
+	 * Currency
+	 * @return
+	 */
+	public String getCurrencyCountry();
 	
+	/*
+	 * User Bank Accounts
+	 * @return
+	 */
+	public  Double getUserBankAccounts();
+	
+	/*
+	 * User Bank Accounts
+	 * @return
+	 */
+	public  Double getUserBankAccounts(String user);
 
+	
+	public List<BankAccountsUser> getBankAccountsUserSite();
+	
+	public String displayNumber(Double l);
+	
 }
+	

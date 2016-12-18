@@ -6,6 +6,8 @@ import org.sakaiproject.sharegame.tool.producers.Commerce;
 import org.sakaiproject.sharegame.tool.producers.CompanyInfo;
 import org.sakaiproject.sharegame.tool.producers.Graphs;
 import org.sakaiproject.sharegame.tool.producers.TradeTool;
+import org.sakaiproject.sharegame.tool.producers.Trading;
+import org.sakaiproject.sharegame.tool.producers.Wealth;
 
 import uk.org.ponder.messageutil.MessageLocator;
 import uk.org.ponder.rsf.components.UIContainer;
@@ -35,8 +37,9 @@ public class NavBarRenderer {
 
 		UIInternalLink.make(joint, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));
 		UIInternalLink.make(joint, "Graphs", UIMessage.make("admin_GR"), new SimpleViewParameters(Graphs.VIEW_ID));
-		UIInternalLink.make(joint, "trade-shares", UIMessage.make("admin_TR"), new SimpleViewParameters(TradeTool.VIEW_ID));
+		UIInternalLink.make(joint, "trading", UIMessage.make("admin_TR"), new SimpleViewParameters(Trading.VIEW_ID));
 		UIInternalLink.make(joint, "commerce", UIMessage.make("admin_TS"), new SimpleViewParameters(Commerce.VIEW_ID));		
 		
+		UIInternalLink.make(joint, "wealth", UIMessage.make("admin_W"), new SimpleViewParameters(Wealth.VIEW_ID));
 	};
 }

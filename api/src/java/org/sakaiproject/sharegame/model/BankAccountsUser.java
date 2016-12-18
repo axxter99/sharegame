@@ -40,13 +40,51 @@ public class BankAccountsUser implements Serializable {
     balance numeric(20,4) DEFAULT 0 NOT NULL
 );
 **/
+	public BankAccountsUser(String user) {
+		this.user = user;
+	}
+	
 	private static final long serialVersionUID = 1L;
 	
 	private long id;
 	
 	private String user;
 	
-	private long balance;
+	private Double balance;
+	
+	private long site;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public Double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+
+	public long getSite() {
+		return site;
+	}
+
+	public void setSite(long site) {
+		this.site = site;
+	}
 	
 	
 }

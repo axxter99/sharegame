@@ -23,6 +23,7 @@ package org.sakaiproject.sharegame.tool.producers;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
+import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIOutput;
@@ -41,6 +42,12 @@ public class TradeTool implements ViewComponentProducer {
 	public void setShareGameUser(ShareGameUser shareGameUser) {
 		this.shareGameUser = shareGameUser;
 	}
+	
+	private NavBarRenderer navBarRenderer;
+	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
+		this.navBarRenderer = navBarRenderer;
+	}
+	
 	@Override
 	public String getViewID() {
 		return VIEW_ID;
@@ -49,7 +56,7 @@ public class TradeTool implements ViewComponentProducer {
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("ShareGame!: trade!");
-		
+		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 		UIOutput.make(tofill, "shareUser", shareGameUser.getName());
 	}
 
