@@ -21,6 +21,8 @@ package org.sakaiproject.sharegame.model;
  */
 
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -53,6 +55,24 @@ public class BankAccountsUser implements Serializable {
 	private Double balance;
 	
 	private long site;
+	private Date creationDate;
+	private Date modefiedOn;
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Date getModefiedOn() {
+		return modefiedOn;
+	}
+
+	public void setModefiedOn(Date modefiedOn) {
+		this.modefiedOn = modefiedOn;
+	}
 
 	public long getId() {
 		return id;

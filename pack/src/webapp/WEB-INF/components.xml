@@ -2,6 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Bring in the HBM related beans beans -->
+	
+	<import resource="hibernate-hbms.xml" />
+	
+	
 	<!-- <bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao"> 
 		</bean> -->
 

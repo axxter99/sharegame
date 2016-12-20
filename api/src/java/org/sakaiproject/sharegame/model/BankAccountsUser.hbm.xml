@@ -35,10 +35,11 @@
                 <param name="sequence">SHAREGAME_BANKM_ID_SEQ</param>
 	    	</generator>
 		</id>
-		<!-- <property name="userId" type="string" length="255" not-null="true" />
-		<property name="context" type="string" length="255" not-null="true" />
-		<property name="firstName" type="string" length="255" not-null="false" />
-		<property name="lastName" type="string" length="255" not-null="false" />
-		<property name="eid" type="string" length="255" not-null="false" /> -->
+		<property name="user" type="string" length="255" not-null="true"/>
+		 <property name="site" type="long" not-null="true" />
+		<property name="balance" type="long" not-null="true"/>
+		<property name="creationDate" type="timestamp" not-null="true"/>
+		<property name="modefiedOn" type="timestamp" not-null="true"/>
+
 	</class>
 </hibernate-mapping>
