@@ -5,7 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.tool.producers.Commerce;
 import org.sakaiproject.sharegame.tool.producers.CompanyInfo;
 import org.sakaiproject.sharegame.tool.producers.Graphs;
-import org.sakaiproject.sharegame.tool.producers.TradeTool;
 import org.sakaiproject.sharegame.tool.producers.Trading;
 import org.sakaiproject.sharegame.tool.producers.Wealth;
 
@@ -31,8 +30,8 @@ public class NavBarRenderer {
 	 * @param currentViewID
 	 */
 	public void makeNavBar(UIContainer tofill, String divID, String currentViewID){
-		log.info("OK!");
-		log.info(messageLocator.getMessage("admin_CD"));
+		
+		
 		UIJointContainer joint = new UIJointContainer(tofill, divID,"sharegame-navigation:");
 
 		UIInternalLink.make(joint, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));

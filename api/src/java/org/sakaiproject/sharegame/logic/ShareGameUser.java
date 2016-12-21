@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import org.sakaiproject.sharegame.model.BankAccountsUser;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 
 /*
  * #%L
@@ -71,6 +72,9 @@ public interface ShareGameUser {
 	public List<BankAccountsUser> getBankAccountsUserSite();
 	
 	public String displayNumber(Double l);
+	
+	public ShareGameSite getShareGameSite();
+	public ShareGameSite getShareGameSite(String ref);
 	
 }
 	

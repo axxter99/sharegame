@@ -15,7 +15,9 @@ import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.exception.IdUnusedException;
 import org.sakaiproject.exception.PermissionException;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
+//import org.sakaiproject.sharegame.logic.dao.ValidationDao;
 import org.sakaiproject.sharegame.model.BankAccountsUser;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 import org.sakaiproject.site.api.Site;
 import org.sakaiproject.site.api.SiteService;
 import org.sakaiproject.user.api.User;
@@ -49,10 +51,12 @@ public class ShareGameUserImpl implements ShareGameUser {
 	}
 	
 	
-	
-	
-	
-	
+/*	private ValidationDao dao;
+	public void setDao(ValidationDao dao) {
+		this.dao = dao;
+	}
+*/
+
 	@Override
 	public String getUserId() {
 		return userDirectoryService.getCurrentUser().getEid();
@@ -159,6 +163,34 @@ public class ShareGameUserImpl implements ShareGameUser {
 
 		log.debug(amountOut + "   " + currentLocale.toString());
 		return amountOut;
+	}
+
+
+
+
+
+
+	@Override
+	public ShareGameSite getShareGameSite() {
+		
+		return getShareGameSite(developerHelperService.getCurrentLocationId());
+	}
+
+
+
+
+
+
+	@Override
+	public ShareGameSite getShareGameSite(String ref) {
+		log.debug("getShareGameSite: "  + ref);
+		
+		ShareGameSite sgs = new ShareGameSite();
+		sgs.setSite(ref);
+		sgs.setBalance(new Double("1000000.00"));
+		sgs.setCurrency("ZAR");
+		
+		return sgs;
 	}
 
 

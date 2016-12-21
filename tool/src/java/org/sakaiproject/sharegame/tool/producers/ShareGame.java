@@ -23,6 +23,7 @@ package org.sakaiproject.sharegame.tool.producers;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIContainer;
@@ -63,6 +64,8 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		log.debug("ShareGame!");
 		log.debug("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
 		
+		ShareGameSite sgs = shareGameUser.getShareGameSite();
+		log.debug("ShareGameSite: " + sgs.getSite());
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 				
 		UIInternalLink.make(tofill, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));

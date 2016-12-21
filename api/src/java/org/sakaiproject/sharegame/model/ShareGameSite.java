@@ -18,6 +18,9 @@ public class ShareGameSite implements Serializable {
 
 	private Double balance;
 	
+	private String currency;
+	
+	
 	public long getId() {
 		return id;
 	}
@@ -41,6 +44,15 @@ public class ShareGameSite implements Serializable {
 	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	
 	
 	
 
