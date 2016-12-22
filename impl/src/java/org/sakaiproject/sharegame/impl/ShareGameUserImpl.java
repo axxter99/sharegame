@@ -11,11 +11,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.money.CurrencyUnit;
 import org.sakaiproject.authz.api.Member;
+import org.sakaiproject.component.api.ServerConfigurationService;
 import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.exception.IdUnusedException;
 import org.sakaiproject.exception.PermissionException;
+import org.sakaiproject.genericdao.api.search.Search;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
-//import org.sakaiproject.sharegame.logic.dao.ValidationDao;
+import org.sakaiproject.sharegame.logic.dao.ValidationDao;
 import org.sakaiproject.sharegame.model.BankAccountsUser;
 import org.sakaiproject.sharegame.model.ShareGameSite;
 import org.sakaiproject.site.api.Site;
@@ -51,15 +53,21 @@ public class ShareGameUserImpl implements ShareGameUser {
 	}
 	
 	
-/*	private ValidationDao dao;
+	private ValidationDao dao;
 	public void setDao(ValidationDao dao) {
 		this.dao = dao;
 	}
-*/
+
 
 	@Override
 	public String getUserId() {
 		return userDirectoryService.getCurrentUser().getEid();
+	}
+
+	private ServerConfigurationService serverConfigurationService;
+	public void setServerConfigurationService(
+			ServerConfigurationService serverConfigurationService) {
+		this.serverConfigurationService = serverConfigurationService;
 	}
 
 	
@@ -184,14 +192,30 @@ public class ShareGameUserImpl implements ShareGameUser {
 	@Override
 	public ShareGameSite getShareGameSite(String ref) {
 		log.debug("getShareGameSite: "  + ref);
+		List<ShareGameSite> data = dao.findBySearch(ShareGameSite.class, new Search("site", ref));
 		
-		ShareGameSite sgs = new ShareGameSite();
-		sgs.setSite(ref);
-		sgs.setBalance(new Double("1000000.00"));
-		sgs.setCurrency("ZAR");
-		
+		ShareGameSite sgs;
+		log.debug("data: " + data.size());
+		if (0 == data.size()) {
+			sgs = new ShareGameSite();
+			sgs.setSite(ref);
+			sgs.setBalance(getBalance());
+			sgs.setCurrency(getCurrency());
+			dao.create(sgs);
+		} else {
+			sgs = (ShareGameSite)data.get(0); ;
+		}
 		return sgs;
 	}
 
-
+	//sakai.proj
+	private Double getBalance() {
+		Double BALANCE = new Double(serverConfigurationService.getString("sharegame.Balance", "1000000"));
+		return BALANCE;
+	}
+	
+	private String getCurrency() {
+		String curreny = serverConfigurationService.getString("sharegame.Currency", "USD");
+		return curreny;
+	}
 }

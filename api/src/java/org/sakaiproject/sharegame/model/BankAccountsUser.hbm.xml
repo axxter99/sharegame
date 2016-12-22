@@ -37,7 +37,7 @@
 		</id>
 		<property name="user" type="string" length="255" not-null="true"/>
 		 <property name="site" type="long" not-null="true" />
-		<property name="balance" type="long" not-null="true"/>
+		<property name="balance" type="double" not-null="true"/>
 		<property name="creationDate" type="timestamp" not-null="true"/>
 		<property name="modefiedOn" type="timestamp" not-null="true"/>
 
