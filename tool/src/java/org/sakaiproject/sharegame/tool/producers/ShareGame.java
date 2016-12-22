@@ -70,10 +70,10 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 				
 		UIInternalLink.make(tofill, "CompanyInfo", UIMessage.make("admin_CD"), new SimpleViewParameters(CompanyInfo.VIEW_ID));
 		UIInternalLink.make(tofill, "Graphs", UIMessage.make("admin_GR"), new SimpleViewParameters(Graphs.VIEW_ID));
-		UIInternalLink.make(tofill, "trade-shares", UIMessage.make("admin_TR"), new SimpleViewParameters(TradeTool.VIEW_ID));
-		UIInternalLink.make(tofill, "commerce", UIMessage.make("admin_TS"), new SimpleViewParameters(Commerce.VIEW_ID));	
+		UIInternalLink.make(tofill, "trade-shares", UIMessage.make("admin_TradingHistory"), new SimpleViewParameters(TradeTool.VIEW_ID));
+		UIInternalLink.make(tofill, "trading", UIMessage.make("admin_TradeRules"), new SimpleViewParameters(Trading.VIEW_ID));
+		UIInternalLink.make(tofill, "commerce", new SimpleViewParameters(Commerce.VIEW_ID));	
 		
-		UIInternalLink.make(tofill, "trading", UIMessage.make("admin_TR"), new SimpleViewParameters(Trading.VIEW_ID));
 		UIOutput.make(tofill, "shareUser", shareGameUser.getName() + " (" + shareGameUser.getUserId() + ")");
 		
 	}
