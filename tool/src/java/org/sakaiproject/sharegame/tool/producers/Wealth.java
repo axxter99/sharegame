@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
 import org.sakaiproject.sharegame.model.BankAccountsUser;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIBranchContainer;
@@ -36,13 +37,14 @@ public class Wealth implements ViewComponentProducer {
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.info("Wealth");
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
+		ShareGameSite site = shareGameUser.getShareGameSite();
 		List<BankAccountsUser> bu = shareGameUser.getBankAccountsUserSite();
-		String currency = shareGameUser.getCurrencyCountry();
+		String currency = site.getCurrency();
 		for (int q = 0; q < bu.size(); q++) {
 			BankAccountsUser u =  bu.get(q);
 			UIBranchContainer row = UIBranchContainer.make(tofill, "user-row:");
 			UIOutput.make(row, "user-eid", shareGameUser.getUserSortName(u.getUser()));
-			log.debug("Balance: " + new Double(u.getBalance()).toString());
+			//log.debug("Balance: " + new Double(u.getBalance()).toString());
 			UIOutput.make(row, "user-currency", currency);
 			UIOutput.make(row, "user-wealth", shareGameUser.displayNumber(u.getBalance()));
 

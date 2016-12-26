@@ -18,6 +18,9 @@
  */
 package org.sakaiproject.sharegame.logic.dao;
 
+import java.util.List;
+import java.util.Set;
+
 /*
  * #%L
  * sharegame - Implementation
@@ -40,7 +43,12 @@ package org.sakaiproject.sharegame.logic.dao;
 
 import org.sakaiproject.genericdao.api.GeneralGenericDao;
 
+
+
 public interface ValidationDao extends GeneralGenericDao {
+
+	
+
 	
 	
 	

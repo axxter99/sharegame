@@ -1,7 +1,10 @@
 package org.sakaiproject.sharegame.impl;
 
 import java.text.NumberFormat;
+import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -9,12 +12,14 @@ import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.mapping.Collection;
 import org.joda.money.CurrencyUnit;
 import org.sakaiproject.authz.api.Member;
 import org.sakaiproject.component.api.ServerConfigurationService;
 import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.exception.IdUnusedException;
 import org.sakaiproject.exception.PermissionException;
+import org.sakaiproject.genericdao.api.search.Restriction;
 import org.sakaiproject.genericdao.api.search.Search;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
 import org.sakaiproject.sharegame.logic.dao.ValidationDao;
@@ -129,32 +134,62 @@ public class ShareGameUserImpl implements ShareGameUser {
 	public List<BankAccountsUser> getBankAccountsUserSite()  {
 		String siteId = developerHelperService.getCurrentLocationId();  //.getCurrentLocationReference();
 		log.debug("Site: " + siteId);
-		List<BankAccountsUser> bu = new ArrayList<BankAccountsUser>();;
+		ShareGameSite sgs = getShareGameSite(siteId);
+		List<BankAccountsUser> bu = new ArrayList<BankAccountsUser>();
 		try {
 			Site site = siteService.getSiteVisit(siteId);
 			Set<Member> member = site.getMembers();
-			bu = getBankAccountsUserSite(member, 0);
+			bu = getBankAccountsUserSite(member, sgs);
 		} catch (IdUnusedException e) {
-			log.error("IdUnusedException", e);
+			log.debug("IdUnusedException", e);
 		} catch (PermissionException e) {
 			log.error("PermissionException", e);
 		}
 		return bu;
 	}
 	
-	public List<BankAccountsUser> getBankAccountsUserSite(Set<Member> member, long site) {
+	public List<BankAccountsUser> getBankAccountsUserSite(Set<Member> member, ShareGameSite site) {
+		 ShareGameSite sgs = site;
+		 Search search = new Search();
+		 Restriction rest = new Restriction("site", sgs.getId());
+		 search.addRestriction(rest);
+		 List<BankAccountsUser> data = dao.findBySearch(BankAccountsUser.class, search);
+		 log.debug("getBankAccountsUserSite: " + data.size());
+		if (0 == data.size()) {
+			log.debug("getBankAccountsUserSite: 0!");
+			Iterator<Member> iterator = member.iterator();
+			Set<BankAccountsUser> id = new HashSet<BankAccountsUser>();
+			while (iterator.hasNext()) {			
+				Member m = iterator.next();
+				//log.debug("Member: " + m.getUserEid() + " (" + m.getUserId() + ")");
+				BankAccountsUser bu = new BankAccountsUser(m.getUserId());
+				bu.setBalance(sgs.getBalance());
+				bu.setSite(sgs.getId());
+				bu.setCreationDate(new Date());
+				bu.setModefiedOn(new Date());
+				dao.create(bu);
+				id.add(bu);
+				iterator.remove();
+			}
+			//Set<BankAccountsUser> t = dao.saveSet(BankAccountsUser.class, id);
+			log.debug("BankAccountsUser; " + id.size()); 
+			data = dao.findBySearch(BankAccountsUser.class, search);
+		 }
+			 
+		/* 
 		List<BankAccountsUser> bankAccountsUser = new ArrayList<BankAccountsUser>();
 		Iterator<Member> iterator = member.iterator();
 		while (iterator.hasNext()) {
+			
+			
 			Member m = iterator.next();
 			log.debug("Menber: " + m.getUserEid() + " (" + m.getUserId() + ")");
 			BankAccountsUser bu = new BankAccountsUser(m.getUserId());
-			// TODO setBalance
-			bu.setBalance(new Double("1000000.00"));
+			bu.setBalance(sgs.getBalance());
 			bankAccountsUser.add(bu);
 			iterator.remove();
-		}
-		return bankAccountsUser;
+		} */
+		return data;
 	}
 
 	@Override
@@ -169,7 +204,7 @@ public class ShareGameUserImpl implements ShareGameUser {
 
 		amountOut = numberFormatter.format(amount);
 
-		log.debug(amountOut + "   " + currentLocale.toString());
+		//log.debug(amountOut + "   " + currentLocale.toString());
 		return amountOut;
 	}
 
@@ -208,7 +243,7 @@ public class ShareGameUserImpl implements ShareGameUser {
 		return sgs;
 	}
 
-	//sakai.proj
+	//sakai.properties
 	private Double getBalance() {
 		Double BALANCE = new Double(serverConfigurationService.getString("sharegame.Balance", "1000000"));
 		return BALANCE;
