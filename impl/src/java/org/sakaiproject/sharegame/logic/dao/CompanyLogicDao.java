@@ -25,31 +25,71 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.sakaiproject.entitybroker.DeveloperHelperService;
+import org.sakaiproject.genericdao.api.search.Restriction;
+import org.sakaiproject.genericdao.api.search.Search;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
+import org.sakaiproject.sharegame.logic.ShareGameUser;
 import org.sakaiproject.sharegame.model.Company;
+import org.sakaiproject.sharegame.model.Sector;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 
 public class CompanyLogicDao implements CompanyLogic {
 
 	private static Log log = LogFactory.getLog(CompanyLogicDao.class);
-	public void init(){
+
+	public void init() {
 		log.info("init()");
 	}
 
-	@Override
-	public List<Company> getCompany() {
-		List<Company> c = new ArrayList<Company>();
-		Company e = new Company();
-		e.setCompanyCode("AGL");
-		e.setId(1);
-		e.setCompanyName("Anglo American plc");
-		e.setWebsite("http://www.angloamerican.com/");
-		e.setSector(1);
+	private ValidationDao dao;
+	public void setDao(ValidationDao dao) {
+		this.dao = dao;
+	}
+	
+	
+	private DeveloperHelperService developerHelperService;
 
-		c.add(e);
-		Company f = new Company(2, "BCE", "and sdfgsd", "htp:www.sdsf.com");
-		f.setSector(1);
-		c.add(f);
-		return c;
+	public void setDeveloperHelperService(DeveloperHelperService developerHelperService) {
+		this.developerHelperService = developerHelperService;
+	}
+	
+	private ShareGameUser shareGameUser;
+	
+	public void setShareGameUser(ShareGameUser shareGameUser) {
+		this.shareGameUser = shareGameUser;
 	}
 
+	@Override
+	public List<Company> getCompany(ShareGameSite site) {
+		//addC();
+		ShareGameSite sgs = site;
+		Search search = new Search();
+		Restriction rest = new Restriction("site", sgs.getId());
+		search.addRestriction(rest);
+		//data = dao.findBySearch(Company.class, new Search()); //, search);
+		List<Company> data = dao.findAll(Company.class);
+		return data;
+	}
+	
+	public List<Company> getCompany() {
+		String siteId = developerHelperService.getCurrentLocationId();
+		ShareGameSite sgs = shareGameUser.getShareGameSite(siteId);
+		return getCompany(sgs);
+	}
+
+	@Override
+	public void save(Company c) {
+		
+		dao.create(c);
+	}
+
+	@Override
+	public void sectorSave(Sector s) {
+		dao.create(s);
+		
+	}
+
+
+	
 }

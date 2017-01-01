@@ -16,6 +16,7 @@
 				<value>org.sakaiproject.sharegame.model.Company</value>
 				<value>org.sakaiproject.sharegame.model.BankAccountsUser</value>
 				<value>org.sakaiproject.sharegame.model.ShareGameSite</value>
+				<value>org.sakaiproject.sharegame.model.Sector</value>
 			</list>
 		</property>
 	</bean>

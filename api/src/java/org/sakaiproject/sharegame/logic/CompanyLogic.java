@@ -23,9 +23,19 @@ package org.sakaiproject.sharegame.logic;
 import java.util.List;
 
 import org.sakaiproject.sharegame.model.Company;
+import org.sakaiproject.sharegame.model.Sector;
+import org.sakaiproject.sharegame.model.ShareGameSite;
 
+/**
+ * @author dhorwitz
+ *
+ */
 public interface CompanyLogic {
 	
+	
 	public List<Company> getCompany();
+	public List<Company> getCompany(ShareGameSite site);
+	public void save(Company c);
+	public void sectorSave(Sector s);
 
 }

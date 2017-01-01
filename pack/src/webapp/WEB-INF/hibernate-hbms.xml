@@ -12,6 +12,7 @@
 				<value>org/sakaiproject/sharegame/model/Company.hbm.xml</value>
 				<value>org/sakaiproject/sharegame/model/BankAccountsUser.hbm.xml</value>
 				<value>org/sakaiproject/sharegame/model/ShareGameSite.hbm.xml</value>
+				<value>org/sakaiproject/sharegame/model/Sector.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

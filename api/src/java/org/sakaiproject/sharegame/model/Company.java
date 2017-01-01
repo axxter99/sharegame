@@ -52,7 +52,7 @@ public class Company implements Serializable {
 	private long id;
 	private String companyCode;
 	private String companyName;
-	private Integer sector;
+	private Sector sector;
 	private String website;
 	
 	public Company() {
@@ -88,10 +88,10 @@ public class Company implements Serializable {
 	/**
 	 * @return
 	 */
-	public Integer getSector() {
+	public Sector getSector() {
 		return sector;
 	}
-	public void setSector(Integer sector) {
+	public void setSector(Sector sector) {
 		this.sector = sector;
 	}
 	

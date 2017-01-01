@@ -18,8 +18,6 @@
  */
 package org.sakaiproject.sharegame.logic.dao;
 
-import java.util.List;
-import java.util.Set;
 
 /*
  * #%L

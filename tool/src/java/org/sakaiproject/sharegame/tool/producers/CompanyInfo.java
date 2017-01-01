@@ -26,6 +26,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
+import org.sakaiproject.sharegame.model.Sector;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
 import uk.org.ponder.rsf.components.UIBranchContainer;
@@ -53,7 +54,7 @@ public class CompanyInfo implements ViewComponentProducer {
 	}
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
-		log.info("CompanyInfo!");
+		log.debug("CompanyInfo!");
 		// Select * from companies,sector where companies.sector=sector.sectorid
 		// and used order by companyname");
 		// for ($i=0;$i<pg_numrows($arecordset);$i++) {
@@ -67,21 +68,23 @@ public class CompanyInfo implements ViewComponentProducer {
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 
 		List<Company> c = companyLogic.getCompany();
 
-		log.info("c: " + c.size()); 
+		log.debug("c: " + c.size()); 
 
 		for (int i = 0; i < c.size(); i++) {
 
 			Company q = c.get(i);
-			log.info("q: " + i);
-			log.info(q.getCompanyCode() + ": " + q.getCompanyName());
+			log.debug("q: " + i);
+			log.debug(q.getCompanyCode() + ": " + q.getCompanyName());
+			Sector s = q.getSector();
+			log.debug("Sector: " + s.getSector());
 			UIBranchContainer row = UIBranchContainer.make(tofill, "thCM:");
 			UIInternalLink.make(row, "companyCode", q.getCompanyCode(), new SimpleViewParameters(Companies2.VIEW_ID));
 			UIOutput.make(row, "companyName", q.getCompanyName());
 
-			UIOutput.make(row, "sectorName", q.getSector().toString()); 
+			UIOutput.make(row, "sectorName", s.getSector()); 
 
 		} 
-		log.info("lesh");
+		
 
 	}
 

@@ -24,5 +24,8 @@
 	</bean>
 	
 	<bean id="org.sakaiproject.sharegame.logic.CompanyLogic" class="org.sakaiproject.sharegame.logic.dao.CompanyLogicDao" init-method="init">
+		<property name="dao" ref="org.sakaiproject.sharegame.dao.ValidationLogicDao" />
+		<property name="developerHelperService" ref="org.sakaiproject.entitybroker.DeveloperHelperService"/>
+		<property name="shareGameUser"  ref="org.sakaiproject.sharegame.logic.ShareGameUser"/>
 	</bean>
 </beans>
