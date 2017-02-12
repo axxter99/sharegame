@@ -1,7 +1,8 @@
 package org.sakaiproject.sharegame.tool.renderers;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.sakaiproject.sharegame.model.Trade;
 import org.sakaiproject.sharegame.tool.producers.Commerce;
 import org.sakaiproject.sharegame.tool.producers.CompanyInfo;
@@ -24,7 +25,7 @@ public class NavBarRenderer {
 	public void setMessageLocator(MessageLocator messageLocator) {
 		this.messageLocator = messageLocator;
 	}
-	private static Log log = LogFactory.getLog(NavBarRenderer.class);
+	private static Logger log = LoggerFactory.getLogger(NavBarRenderer.class);
 	/**
 	 * Renderer for the nav bar. If @param currentUserId AND @param currentSiteId are null or invalid, nav bar will not render the permissions link
 	 * @param tofill
