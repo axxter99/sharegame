@@ -17,6 +17,7 @@
 				<value>org.sakaiproject.sharegame.model.BankAccountsUser</value>
 				<value>org.sakaiproject.sharegame.model.ShareGameSite</value>
 				<value>org.sakaiproject.sharegame.model.Sector</value>
+				<value>org.sakaiproject.sharegame.model.Trade</value>
 			</list>
 		</property>
 	</bean>
