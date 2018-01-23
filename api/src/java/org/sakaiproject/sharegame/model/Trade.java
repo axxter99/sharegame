@@ -21,6 +21,12 @@ package org.sakaiproject.sharegame.model;
  */
 
 import java.io.Serializable;
+import java.time.Instant;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,6 +40,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="SHAREGAME_TRADE")
 public class Trade implements  Serializable {
 
 	/**
@@ -41,9 +48,16 @@ public class Trade implements  Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	
+	@Id
+	@Column(name = "TRADE_ID", nullable = false)
 	private long id;
+	
 	private String symbol;
 	private String company;
+	
+    
+    private Date date;
+    
+    private Instant instant;
 	
 }

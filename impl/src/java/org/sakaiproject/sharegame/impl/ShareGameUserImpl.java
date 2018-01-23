@@ -29,10 +29,11 @@ import org.sakaiproject.user.api.User;
 import org.sakaiproject.user.api.UserDirectoryService;
 import org.sakaiproject.user.api.UserNotDefinedException;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ShareGameUserImpl implements ShareGameUser {
 
-	
-	private static Log log = LogFactory.getLog(ShareGameUserImpl.class);
 
 	public void init() {
 		log.info("init()");

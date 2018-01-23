@@ -2,8 +2,6 @@ package org.sakaiproject.sharegame.logic.dao;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.genericdao.api.search.Restriction;
 import org.sakaiproject.genericdao.api.search.Search;
@@ -13,9 +11,11 @@ import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
 import org.sakaiproject.sharegame.model.ShareGameSite;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CompanyLogicDao implements CompanyLogic {
 
-	private static Log log = LogFactory.getLog(CompanyLogicDao.class);
 
 	public void init() {
 		log.info("init()");
