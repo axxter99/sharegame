@@ -20,18 +20,17 @@ package org.sakaiproject.sharegame.tool.producers;
  * #L%
  */
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
 import uk.org.ponder.rsf.viewstate.ViewParameters;
 
+@Slf4j
 public class Graphs implements ViewComponentProducer {
-	
-	private static Log log = LogFactory.getLog(Graphs.class);
+
 
 	private NavBarRenderer navBarRenderer;
 	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {

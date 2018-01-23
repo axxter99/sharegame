@@ -1,17 +1,14 @@
 package org.sakaiproject.sharegame.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ShareGameDemo {
 
-	private static Logger log = LoggerFactory.getLogger(ShareGameDemo.class);
 	
 	private CompanyLogic companyLogic;
 	

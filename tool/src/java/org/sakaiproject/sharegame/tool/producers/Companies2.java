@@ -22,24 +22,21 @@ package org.sakaiproject.sharegame.tool.producers;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIContainer;
-import uk.org.ponder.rsf.components.UIInternalLink;
 import uk.org.ponder.rsf.components.UILink;
 import uk.org.ponder.rsf.components.UIOutput;
 import uk.org.ponder.rsf.view.ComponentChecker;
 import uk.org.ponder.rsf.view.ViewComponentProducer;
-import uk.org.ponder.rsf.viewstate.SimpleViewParameters;
 import uk.org.ponder.rsf.viewstate.ViewParameters;
 
+@Slf4j
 public class Companies2 implements ViewComponentProducer {
-	
-	private static Log log = LogFactory.getLog(Companies2.class);
+
 	
 	public static final String VIEW_ID = "companies2";
 	
@@ -68,7 +65,7 @@ public class Companies2 implements ViewComponentProducer {
 		try {
 			UIOutput.make(tofill, "sectorName", q.getSector().toString());
 		} catch (NullPointerException e) {
-			log.error(e.fillInStackTrace());
+			log.error(e.getLocalizedMessage(),e);
 		}
 		
 	}

@@ -22,13 +22,12 @@ package org.sakaiproject.sharegame.tool.producers;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIBranchContainer;
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIInternalLink;
@@ -38,9 +37,9 @@ import uk.org.ponder.rsf.view.ViewComponentProducer;
 import uk.org.ponder.rsf.viewstate.SimpleViewParameters;
 import uk.org.ponder.rsf.viewstate.ViewParameters;
 
+@Slf4j
 public class CompanyInfo implements ViewComponentProducer {
 
-	private static Log log = LogFactory.getLog(CompanyInfo.class);
 	public static final String VIEW_ID = "companyinfo";
 
 	private CompanyLogic companyLogic;

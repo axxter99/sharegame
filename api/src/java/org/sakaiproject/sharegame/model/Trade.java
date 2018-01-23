@@ -21,6 +21,7 @@ package org.sakaiproject.sharegame.model;
  */
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -56,5 +57,7 @@ public class Trade implements  Serializable {
 	
     
     private Date date;
+    
+    private Instant instant;
 	
 }

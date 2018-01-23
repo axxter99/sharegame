@@ -1,8 +1,5 @@
 package org.sakaiproject.sharegame.dao.impl;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 /*
  * #%L
  * sharegame - Implementation
@@ -26,9 +23,11 @@ import org.apache.commons.logging.LogFactory;
 import org.sakaiproject.genericdao.hibernate.HibernateCompleteGenericDao;
 import org.sakaiproject.sharegame.logic.dao.ValidationDao;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ValidationLogicDao extends HibernateCompleteGenericDao implements ValidationDao  {
 
-	private static Log log = LogFactory.getLog(ValidationLogicDao.class);
 	public void init(){
 		log.info("init()");
 	}
