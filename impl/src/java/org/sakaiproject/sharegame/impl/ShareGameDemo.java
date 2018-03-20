@@ -4,17 +4,16 @@ import org.sakaiproject.sharegame.logic.CompanyLogic;
 import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ShareGameDemo {
 
-	
+	@Setter
 	private CompanyLogic companyLogic;
 	
-	public void setCompanyLogic(CompanyLogic companyLogic) {
-		this.companyLogic = companyLogic;
-	}
+
 
 	public void init()
 	{

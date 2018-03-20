@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.joda.money.CurrencyUnit;
 import org.sakaiproject.authz.api.Member;
 import org.sakaiproject.component.api.ServerConfigurationService;
@@ -29,6 +27,7 @@ import org.sakaiproject.user.api.User;
 import org.sakaiproject.user.api.UserDirectoryService;
 import org.sakaiproject.user.api.UserNotDefinedException;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -39,29 +38,18 @@ public class ShareGameUserImpl implements ShareGameUser {
 		log.info("init()");
 	}
 
+	@Setter
 	private UserDirectoryService userDirectoryService;
 
-	public void setUserDirectoryService(UserDirectoryService userDirectoryService) {
-		this.userDirectoryService = userDirectoryService;
-	}
-
+	@Setter
 	private DeveloperHelperService developerHelperService;
 
-	public void setDeveloperHelperService(DeveloperHelperService developerHelperService) {
-		this.developerHelperService = developerHelperService;
-	}
-
+	@Setter
 	private SiteService siteService;
 
-	public void setSiteService(SiteService siteService) {
-		this.siteService = siteService;
-	}
-
+	@Setter
 	private ValidationDao dao;
 
-	public void setDao(ValidationDao dao) {
-		this.dao = dao;
-	}
 
 	@Override
 	public String getUserId() {
