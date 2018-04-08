@@ -2,6 +2,8 @@ package org.sakaiproject.sharegame.tool.producers;
 
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.Setter;
+
 /*
  * #%L
  * sharegame - Tool
@@ -31,10 +33,9 @@ public class Trading implements ViewComponentProducer {
 
 	public static final String VIEW_ID = "trading";
 	
+	@Setter
 	private NavBarRenderer navBarRenderer;
-	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
-		this.navBarRenderer = navBarRenderer;
-	}
+
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		// TODO Auto-generated method stub

@@ -22,6 +22,7 @@ package org.sakaiproject.sharegame.tool.producers;
 
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.view.ComponentChecker;
@@ -32,10 +33,9 @@ import uk.org.ponder.rsf.viewstate.ViewParameters;
 public class Graphs implements ViewComponentProducer {
 
 
+	@Setter
 	private NavBarRenderer navBarRenderer;
-	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
-		this.navBarRenderer = navBarRenderer;
-	}
+
 	public static final String VIEW_ID = "graphs";
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {

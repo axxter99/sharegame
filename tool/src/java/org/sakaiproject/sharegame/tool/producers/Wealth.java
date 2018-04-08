@@ -7,6 +7,7 @@ import org.sakaiproject.sharegame.model.BankAccountsUser;
 import org.sakaiproject.sharegame.model.ShareGameSite;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIBranchContainer;
 import uk.org.ponder.rsf.components.UIContainer;
@@ -20,17 +21,13 @@ public class Wealth implements ViewComponentProducer {
 
 	public static final String VIEW_ID = "wealth";
 	
+	@Setter
 	private NavBarRenderer navBarRenderer;
-	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
-		this.navBarRenderer = navBarRenderer;
-	}
+
 	
-	
+	@Setter
 	private ShareGameUser shareGameUser;
-	
-	public void setShareGameUser(ShareGameUser shareGameUser) {
-		this.shareGameUser = shareGameUser;
-	}
+
 	
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {

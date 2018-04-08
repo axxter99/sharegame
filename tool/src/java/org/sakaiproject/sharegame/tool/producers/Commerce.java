@@ -3,6 +3,7 @@ package org.sakaiproject.sharegame.tool.producers;
 import org.sakaiproject.sharegame.logic.ShareGameUser;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIContainer;
 import uk.org.ponder.rsf.components.UIInternalLink;
@@ -15,17 +16,12 @@ import uk.org.ponder.rsf.viewstate.ViewParameters;
 @Slf4j
 public class Commerce implements ViewComponentProducer {
 
-	
+	@Setter
 	private ShareGameUser shareGameUser;
-	
-	public void setShareGameUser(ShareGameUser shareGameUser) {
-		this.shareGameUser = shareGameUser;
-	}
-	
+
+	@Setter
 	private NavBarRenderer navBarRenderer;
-	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
-		this.navBarRenderer = navBarRenderer;
-	}
+
 	
 	public static final String VIEW_ID = "commerce";
 	@Override
