@@ -11,6 +11,7 @@ import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
 import org.sakaiproject.sharegame.model.ShareGameSite;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -21,23 +22,15 @@ public class CompanyLogicDao implements CompanyLogic {
 		log.info("init()");
 	}
 
+	@Setter
 	private ValidationDao dao;
-	public void setDao(ValidationDao dao) {
-		this.dao = dao;
-	}
-	
-	
+
+	@Setter
 	private DeveloperHelperService developerHelperService;
 
-	public void setDeveloperHelperService(DeveloperHelperService developerHelperService) {
-		this.developerHelperService = developerHelperService;
-	}
-	
+	@Setter
 	private ShareGameUser shareGameUser;
 	
-	public void setShareGameUser(ShareGameUser shareGameUser) {
-		this.shareGameUser = shareGameUser;
-	}
 
 	@Override
 	public List<Company> getCompany(ShareGameSite site) {
