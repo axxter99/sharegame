@@ -27,6 +27,7 @@ import org.sakaiproject.sharegame.model.Company;
 import org.sakaiproject.sharegame.model.Sector;
 import org.sakaiproject.sharegame.tool.renderers.NavBarRenderer;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import uk.org.ponder.rsf.components.UIBranchContainer;
 import uk.org.ponder.rsf.components.UIContainer;
@@ -42,15 +43,12 @@ public class CompanyInfo implements ViewComponentProducer {
 
 	public static final String VIEW_ID = "companyinfo";
 
+	@Setter
 	private CompanyLogic companyLogic;
 
-	public void setCompanyLogic(CompanyLogic companyLogic) {
-		this.companyLogic = companyLogic;
-	}
+	@Setter
 	private NavBarRenderer navBarRenderer;
-	public void setNavBarRenderer(NavBarRenderer navBarRenderer) {
-		this.navBarRenderer = navBarRenderer;
-	}
+
 	@Override
 	public void fillComponents(UIContainer tofill, ViewParameters viewparams, ComponentChecker checker) {
 		log.debug("CompanyInfo!");
