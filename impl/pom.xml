@@ -12,8 +12,10 @@
 	<groupId>org.sakaiproject.sharegame</groupId>
 	<artifactId>sharegame-impl</artifactId>
 
-	<packaging>jar</packaging>
-
+	 <packaging>sakai-component</packaging>
+	<properties>
+		<deploy.target>components</deploy.target>
+	</properties>
 	<dependencies>
 
 		<!-- project dependencies -->
@@ -105,6 +107,14 @@
 					<include>**/*.properties</include>
 				</includes>
 			</resource>
+			<resource>
+                <directory>${basedir}/src/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.xslt</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
 		</resources>
 	</build>
 
