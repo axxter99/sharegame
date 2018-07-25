@@ -59,5 +59,11 @@ public class Trade implements  Serializable {
     private Date date;
     
     private Instant instant;
+
+	@Override
+	public String toString() {
+		return "Trade [id=" + id + ", symbol=" + symbol + ", company=" + company + ", date=" + date + ", instant="
+				+ instant + "]";
+	}
 	
 }
