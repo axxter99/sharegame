@@ -8,12 +8,12 @@
 	<artifactId>sharegame</artifactId>
 	
 	<packaging>pom</packaging>
-	<version>12-SNAPSHOT</version>
+	<version>19-SNAPSHOT</version>
 	
 	<parent>
 		<groupId>org.sakaiproject</groupId>
 		<artifactId>master</artifactId>
-		<version>12-SNAPSHOT</version>
+		<version>19-SNAPSHOT</version>
 	</parent>
 	
 	<properties>
@@ -27,13 +27,13 @@
 			<dependency>
       			<groupId>org.sakaiproject.sharegame</groupId>
       			<artifactId>sharegame-api</artifactId>
-      			<version>12-SNAPSHOT</version>
+      			<version>19-SNAPSHOT</version>
       			<scope>provided</scope>
     		</dependency>
     		<dependency>
       			<groupId>org.sakaiproject.sharegame</groupId>
       			<artifactId>sharegame-impl</artifactId>
-      			<version>12-SNAPSHOT</version>
+      			<version>19-SNAPSHOT</version>
       			<scope>runtime</scope>
     		</dependency>
 
