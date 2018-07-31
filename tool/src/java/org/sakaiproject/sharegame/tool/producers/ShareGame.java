@@ -41,6 +41,7 @@ public class ShareGame implements DefaultView, ViewComponentProducer {
 		log.debug("ShareGame!");
 		log.debug("user: " + shareGameUser.getUserId() + "(" + shareGameUser.getUuId() +")");
 		
+		
 		ShareGameSite sgs = shareGameUser.getShareGameSite();
 		log.debug("ShareGameSite: " + sgs.getSite());
 		navBarRenderer.makeNavBar(tofill, "navIntraTool:", VIEW_ID); 

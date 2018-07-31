@@ -25,8 +25,11 @@ import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,6 +40,7 @@ import lombok.NoArgsConstructor;
  * @author dhorwitz
  *
  */
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -52,12 +56,18 @@ public class Trade implements  Serializable {
 	@Column(name = "TRADE_ID", nullable = false)
 	private long id;
 	
+	@Column(name = "SYMBOL")
 	private String symbol;
+	
+	@Column(name = "COMPANY")
 	private String company;
 	
-    
+	@Column(name = "DATE")
+	@Type(type = "org.sakaiproject.springframework.orm.hibernate.type.Date")
     private Date date;
-    
+	
+	@Column(name = "INSTANT")
+    @Type(type = "org.sakaiproject.springframework.orm.hibernate.type.InstantType")
     private Instant instant;
 
 	@Override

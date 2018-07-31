@@ -39,8 +39,8 @@
 		<property name="user" type="string" length="255" not-null="true"/>
 		 <property name="site" type="long" not-null="true" />
 		<property name="balance" type="double" not-null="true"/>
-		<property name="creationDate" type="timestamp"/>
-		<property name="modefiedOn" type="timestamp"/>
+		<property name="creationDate" type="org.sakaiproject.springframework.orm.hibernate.type.InstantType"/>
+		<property name="modefiedOn" type="org.sakaiproject.springframework.orm.hibernate.type.InstantType"/>
 
 	</class>
 </hibernate-mapping>

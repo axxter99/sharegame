@@ -38,7 +38,7 @@ public class ShareGameDemo {
 		e.setWebsite("http://www.angloamerican.com/");
 		e.setSector(s);
 		
-		Company f = new Company(2, "BCE", "and sdfgsd", "htp:www.sdsf.com");
+		Company f = new Company(2, "BCE", "and sdfgsd", "htp://www.sdsf.com");
 		f.setSector(s);
 		
 		
@@ -54,7 +54,7 @@ public class ShareGameDemo {
 		Company apple = new Company();
 		apple.setCompanyCode("AAPL");
 		apple.setCompanyName("Apple Inc.");
-		apple.setWebsite("apple.com");
+		apple.setWebsite("http://apple.com");
 		apple.setSector(t);
 		companyLogic.save(apple);
 		
