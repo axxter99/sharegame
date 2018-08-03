@@ -53,12 +53,17 @@ public class CompanyLogicDao implements EntityTransferrer, CompanyLogic {
 
 	@Override
 	public void save(Company c) {
-		
+		if (c == null) {
+    		throw new IllegalArgumentException("Company can't be null");
+    	}
 		dao.create(c);
 	}
 
 	@Override
 	public void sectorSave(Sector s) {
+		if (s == null) {
+    		throw new IllegalArgumentException("Company can't be null");
+    	}
 		dao.create(s);
 		
 	}

@@ -22,7 +22,6 @@ package org.sakaiproject.sharegame.model;
 
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
