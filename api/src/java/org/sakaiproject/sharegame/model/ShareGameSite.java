@@ -2,6 +2,10 @@ package org.sakaiproject.sharegame.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "SHAREGAME_SHAREGAME")
 public class ShareGameSite implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@Column(name = "SHAREGAME_ID", nullable = false)
 	private long id;
 	
 	private String site;

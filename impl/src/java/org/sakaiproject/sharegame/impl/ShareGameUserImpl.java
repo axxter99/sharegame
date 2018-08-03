@@ -1,8 +1,8 @@
 package org.sakaiproject.sharegame.impl;
 
 import java.text.NumberFormat;
+import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -70,7 +70,6 @@ public class ShareGameUserImpl implements ShareGameUser {
 
 	@Override
 	public String getName() {
-
 		return userDirectoryService.getCurrentUser().getDisplayName();
 	}
 
@@ -82,7 +81,7 @@ public class ShareGameUserImpl implements ShareGameUser {
 
 	@Override
 	public String getUserSortName() {
-
+		
 		return userDirectoryService.getCurrentUser().getSortName();
 	}
 
@@ -157,8 +156,8 @@ public class ShareGameUserImpl implements ShareGameUser {
 				BankAccountsUser bu = new BankAccountsUser(m.getUserId());
 				bu.setBalance(sgs.getBalance());
 				bu.setSite(sgs.getId());
-				bu.setCreationDate(new Date());
-				bu.setModefiedOn(new Date());
+				bu.setCreationDate(Instant.now());
+				bu.setModefiedOn(Instant.now());
 				dao.create(bu);
 				id.add(bu);
 				iterator.remove();
@@ -194,8 +193,8 @@ public class ShareGameUserImpl implements ShareGameUser {
 				BankAccountsUser bu = new BankAccountsUser(m);
 				bu.setBalance(sgs.getBalance());
 				bu.setSite(sgs.getId());
-				bu.setCreationDate(new Date());
-				bu.setModefiedOn(new Date());
+				bu.setCreationDate(Instant.now());
+				bu.setModefiedOn(Instant.now());
 				dao.create(bu);
 
 				its.remove();

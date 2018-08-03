@@ -24,7 +24,7 @@ public class ShareGameUserImplTest {
     public void testGetPollForUserCorrectSites() {
     	
 
-    	ShareGameUserImpl impl = new ShareGameUserImpl();
+    	ShareGameUser impl = new ShareGameUserImpl();
         
     }
 }

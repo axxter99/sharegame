@@ -36,7 +36,9 @@
 	    	</generator>
 		</id>
 
-	<property name="companyCode" type="string" length="255" not-null="true" unique="false"/>
+	<property name="companyCode" type="string">
+		<column name="COMPANY_CODE"  length="255" not-null="true" index="IDX_COMPANY_CODE" /> 
+	</property>
 	<property name="companyName" type="string" length="255" not-null="true"/>
 	<property name="website" type="string" length="255" not-null="true"/>
 	<!-- <property name="sector" type="int" not-null="true"/> -->

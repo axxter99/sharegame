@@ -36,6 +36,8 @@
 	    	</generator>
 		</id>
 
-	<property name="Sector" type="string" length="255" not-null="true"/>
+	<property name="Sector" type="string" length="255" not-null="true">
+		<column name="Sector"  length="255" not-null="true" index="IDX_COMPANY_CODE" /> 
+	</property>
 	</class>
 </hibernate-mapping>

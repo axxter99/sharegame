@@ -2,6 +2,7 @@ package org.sakaiproject.sharegame.logic.dao;
 
 import java.util.List;
 
+import org.sakaiproject.entity.api.EntityTransferrer;
 import org.sakaiproject.entitybroker.DeveloperHelperService;
 import org.sakaiproject.genericdao.api.search.Restriction;
 import org.sakaiproject.genericdao.api.search.Search;
@@ -15,7 +16,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class CompanyLogicDao implements CompanyLogic {
+public class CompanyLogicDao implements EntityTransferrer, CompanyLogic {
 
 
 	public void init() {
@@ -52,13 +53,36 @@ public class CompanyLogicDao implements CompanyLogic {
 
 	@Override
 	public void save(Company c) {
-		
+		if (c == null) {
+    		throw new IllegalArgumentException("Company can't be null");
+    	}
 		dao.create(c);
 	}
 
 	@Override
 	public void sectorSave(Sector s) {
+		if (s == null) {
+    		throw new IllegalArgumentException("Company can't be null");
+    	}
 		dao.create(s);
+		
+	}
+
+	@Override
+	public void transferCopyEntities(String fromContext, String toContext, List<String> ids) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String[] myToolIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void transferCopyEntities(String fromContext, String toContext, List<String> ids, boolean cleanup) {
+		// TODO Auto-generated method stub
 		
 	}
 
