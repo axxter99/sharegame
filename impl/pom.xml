@@ -134,6 +134,12 @@
                     <include>log4j.properties</include>
                 </includes>
             </testResource>
+            <testResource>
+                <directory>${basedir}/src/webapp</directory>
+            </testResource>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+            </testResource>
         </testResources>
           <!-- unit testing -->
         <plugins>
