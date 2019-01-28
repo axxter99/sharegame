@@ -10,7 +10,6 @@
   </parent>
 	
 	<name>sharegame - Tool</name>
-	<groupId>org.sakaiproject.sharegame</groupId>
 	<artifactId>sharegame-tool</artifactId>
 	
 	<packaging>war</packaging>

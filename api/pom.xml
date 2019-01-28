@@ -9,7 +9,6 @@
 	</parent>
 
 	<name>sharegame - API</name>
-	<groupId>org.sakaiproject.sharegame</groupId>
 	<artifactId>sharegame-api</artifactId>
 
 	<packaging>jar</packaging>
